@@ -3,18 +3,18 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "./wave-favicon32.png",
+      "src": "./logo.svg",
       "sizes": "32x32",
-      "type": "image/png"
+      "type": "image/svg"
     },
     {
-      "src": "./wave-favicon96.png",
-      "type": "image/png",
+      "src": "./logo.svg",
+      "type": "image/svg",
       "sizes": "96x96"
     },
     {
-      "src": "./wave-favicon96.png",
-      "type": "image/png",
+      "src": "./logo.svg",
+      "type": "image/svg",
       "sizes": "96x96"
     }
   ],
