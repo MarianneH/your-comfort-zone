@@ -1,7 +1,7 @@
 function SearchComponent({ handleClick, handleChange, searchInput }) {
   return (
     <>
-      <form>
+      <form class="search">
         <input onChange={handleChange} value={searchInput} />
         <button onClick={handleClick}>Search</button>
       </form>

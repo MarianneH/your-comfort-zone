@@ -1,0 +1,20 @@
+/* all the variabl */
+:root {
+  --primary-accent: #1d2526;
+  --secondary-accent: #ff9000;
+  --background-color: #fcefef;
+  --card-background: #f4f2f3;
+  --main-font: "Gothic A1", sans-serif;
+  --accent-font: "Gothic A1", sans-serif;
+  --sm-margin: 8px;
+  --md-margin: 16px;
+  --lg-margin: 32px;
+  --max-margin: 48px;
+  --xs-font: 16px;
+  --sm-font: 18px;
+  --md-font: 20px;
+  --lg-font: 24px;
+  --base-padding: 16px;
+  --standard-shadow: 2px 2px 4px rgba(0, 0, 0, 0.29);
+  --accent-shadow: 1px 1px 2px var(--secondary-accent);
+}
