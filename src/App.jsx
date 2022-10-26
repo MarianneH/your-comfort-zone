@@ -1,12 +1,9 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import GetNewsFeed from "./components/newsFeed";
 
 function App() {
-  return (
-    <p>
-      Cleanedup React App
-    </p>
-  );
+  return <>{/* <GetNewsFeed /> */}</>;
 }
 
 export default App;
