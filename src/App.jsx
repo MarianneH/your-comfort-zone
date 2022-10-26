@@ -3,7 +3,7 @@ import "./App.css";
 import GetNewsFeed from "./components/NewsComponent/newsFeed";
 
 function App() {
-  return <>{/* <GetNewsFeed /> */}</>;
+  return <>{<GetNewsFeed />}</>;
 }
 
 export default App;
