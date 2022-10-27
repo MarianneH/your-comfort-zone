@@ -1,4 +1,4 @@
-.search-bubbles {
+.search_bubbles {
   display: flex;
   justify-content: space-around;
   margin: 16px 0;
@@ -22,15 +22,17 @@
   align-items: center;
   justify-content: center;
 }
-.news-item {
+.news_item {
   margin: 16px 0;
+  color: inherit;
+  text-decoration: inherit;
 }
-.news-images {
+.news_images {
   margin: 0 auto;
   width: 100%;
 }
 
-.news-excerpt {
+.news_excerpt {
   line-height: 1.5em;
-  color: var(--secondary-accent);
+  color: var(--primary-accent);
 }
