@@ -1,0 +1,36 @@
+.search-bubbles {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px 0;
+}
+
+.bubble img {
+  width: 40px;
+  display: inline;
+}
+
+.search {
+  margin: 8px auto;
+  display: flex;
+  justify-content: center;
+}
+.newsfeed {
+  width: 90%;
+  margin: 16px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.news-item {
+  margin: 16px 0;
+}
+.news-images {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.news-excerpt {
+  line-height: 1.5em;
+  color: var(--secondary-accent);
+}
