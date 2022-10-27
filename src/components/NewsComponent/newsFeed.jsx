@@ -101,11 +101,11 @@ function GetNewsFeed() {
   return (
     <>
       <SearchBubbles setQuery={setQuery} />
-      <SearchComponent
+      {/* <SearchComponent
         handleChange={handleChange}
         handleClick={handleClick}
         searchInput={searchInput}
-      />
+      /> */}
       <div className={styles.newsfeed}>
         {data.map((element, index) => (
           <a href={element.url} key={index} className={styles.news_item}>
