@@ -101,13 +101,17 @@ function GetNewsFeed() {
   return (
     <>
       <SearchBubbles setQuery={setQuery} />
-      {/* <SearchComponent
-        handleChange={handleChange}
-        handleClick={handleClick}
-        searchInput={searchInput}
-      /> */}
-      <div className={styles.newsfeed}>
-        {data.map((element, index) => (
+
+      {data.map((element, index) => (
+        <div className={styles.newsfeed}>
+          {index === 4 && (
+            <SearchComponent
+              handleChange={handleChange}
+              handleClick={handleClick}
+              searchInput={searchInput}
+            />
+          )}
+
           <a href={element.url} key={index} className={styles.news_item}>
             <img
               src={element.urlToImage}
@@ -117,8 +121,8 @@ function GetNewsFeed() {
             <h3 className={styles.news_title}>{element.title}</h3>
             <div className={styles.news_excerpt}>{element.description}</div>
           </a>
-        ))}
-      </div>
+        </div>
+      ))}
     </>
   );
 }
