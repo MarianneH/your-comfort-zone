@@ -1,4 +1,4 @@
-import styles from "../NewsComponent/newsComponent.module.css";
+import styles from "./searchComponent.module.css";
 
 function SearchComponent({ handleClick, handleChange, searchInput }) {
   return (

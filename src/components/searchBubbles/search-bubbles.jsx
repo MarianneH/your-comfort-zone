@@ -3,7 +3,7 @@ import books from "../../assets/books.png";
 import yoga from "../../assets/yoga.png";
 import food from "../../assets/food.png";
 import sport from "../../assets/sports.png";
-import styles from "./newsComponent.module.css";
+import styles from "./searchBubbles.module.css";
 
 const bubblesContent = [
   { name: "music", src: music },
