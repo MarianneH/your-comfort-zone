@@ -22,11 +22,7 @@
   align-items: center;
   justify-content: center;
 }
-.news_item {
-  margin: 16px 0;
-  color: inherit;
-  text-decoration: inherit;
-}
+
 .news_images {
   margin: 0 auto;
   width: 100%;
@@ -35,4 +31,18 @@
 .news_excerpt {
   line-height: 1.5em;
   color: var(--primary-accent);
+}
+.api_space {
+  height: 20vh;
+  font-weight: bold;
+  background-color: paleturquoise;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.news_item {
+  margin: 16px 0;
+  color: inherit;
+  text-decoration: inherit;
 }
