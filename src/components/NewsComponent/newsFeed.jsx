@@ -90,7 +90,7 @@ function GetNewsFeed() {
   // }
 
   useEffect(() => {
-    fetchAPI(urls.newsapi, setData);
+    fetchAPI(urls.newscatcher, setData);
     console.log(data);
   }, [query]);
 
