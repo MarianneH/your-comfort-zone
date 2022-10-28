@@ -101,25 +101,32 @@ function GetNewsFeed() {
   return (
     <>
       <SearchBubbles setQuery={setQuery} />
-
-      {data.map((element, index) => (
-        <div className={styles.newsfeed}>
-          {index === 4 && (
-            <SearchComponent
+      {/* <SearchComponent
               handleChange={handleChange}
               handleClick={handleClick}
               searchInput={searchInput}
-            />
+            /> */}
+      {data.map((element, index) => (
+        <div className={styles.newsfeed}>
+          {index === 4 && (
+            <div className={styles.api_space}> Space for API 1</div>
           )}
-
+          {index === 9 && (
+            <div className={styles.api_space}> Space for API 2</div>
+          )}
+          {index === 14 && (
+            <div className={styles.api_space}> Space for API 2</div>
+          )}
           <a href={element.url} key={index} className={styles.news_item}>
             <img
               src={element.urlToImage}
               alt={element.title}
               className={styles.news_images}
             />
-            <h3 className={styles.news_title}>{element.title}</h3>
-            <div className={styles.news_excerpt}>{element.description}</div>
+            <div>
+              <h3 className={styles.news_title}>{element.title}</h3>
+              <div className={styles.news_excerpt}>{element.description}</div>
+            </div>
           </a>
         </div>
       ))}
