@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import GetNewsFeed from "./components/NewsComponent/newsFeed";
+import NewsSection from "./components/newsSection/news-section";
 
 function App() {
-  return <>{<GetNewsFeed />}</>;
+  return <>{<NewsSection />}</>;
 }
 
 export default App;
