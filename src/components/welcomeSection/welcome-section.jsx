@@ -8,7 +8,7 @@ function WelcomeSection() {
       <img src={background} alt="" className={styles.image} />
       <div className={styles.content_container}>
         <div className={styles.logo_and_brand}>
-          Welcome to the Comfort Zone.
+          Welcome to Your Comfort Zone.
         </div>
         <FadingHeadlines wording="Breathe in" />
         <FadingHeadlines wording="Breathe out" />
