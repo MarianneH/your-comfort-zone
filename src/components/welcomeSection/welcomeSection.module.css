@@ -1,0 +1,26 @@
+.welcome_section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.image {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+  z-index: -1;
+  transform: translateZ(-20px) scale(3);
+}
+
+.logo_and_brand {
+  height: 55vh;
+  font-size: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+}

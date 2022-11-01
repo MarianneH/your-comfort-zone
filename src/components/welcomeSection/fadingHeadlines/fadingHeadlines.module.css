@@ -1,0 +1,17 @@
+.breathe_section {
+  font-size: 8vh;
+  height: 70vh;
+}
+
+.breathe_in_out {
+  opacity: 0;
+  text-align: center;
+  position: sticky;
+  top: 40%;
+  transition: opacity ease-in 0.7s;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity ease-in 0.7s;
+}
