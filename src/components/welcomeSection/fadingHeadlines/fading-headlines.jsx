@@ -4,7 +4,7 @@ import styles from "./fadingHeadlines.module.css";
 
 function FadingHeadlines({ wording }) {
   const { ref, inView } = useInView({
-    threshold: 0.9,
+    threshold: 0.7,
   });
   const section = useRef(null);
 
