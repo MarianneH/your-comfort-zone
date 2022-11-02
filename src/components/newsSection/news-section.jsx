@@ -4,6 +4,7 @@ import styles from "./newsSection.module.css";
 import "../../root.css";
 import SearchBubbles from "../searchBubbles/search-bubbles";
 import NewsCard from "../newsCard/news-card";
+import GetSpacePhotos from "../SpacePhotosComponent/space-photos";
 
 function NewsSection() {
   const sampleNews = [
@@ -176,9 +177,7 @@ function NewsSection() {
       <div className={styles.newsfeed}>
         {data.map((element, index) => (
           <>
-            {index === 4 && (
-              <div className={styles.api_space}> Space for API 1</div>
-            )}
+            {index === 4 && <GetSpacePhotos />}
             {index === 9 && (
               <div className={styles.api_space}> Space for API 2</div>
             )}
