@@ -7,7 +7,7 @@
   opacity: 0;
   text-align: center;
   position: sticky;
-  top: 40%;
+  top: 50%;
   transition: opacity ease-in 0.7s;
 }
 
