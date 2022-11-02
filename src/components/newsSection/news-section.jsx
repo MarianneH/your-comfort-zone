@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SearchComponent from "../searchComponent/searchComponent";
-import "./newsComponent.modules.css";
+import styles from "./newsSection.module.css";
 import "../../root.css";
-import SearchBubbles from "./search-bubbles";
+import SearchBubbles from "../searchBubbles/search-bubbles";
+import NewsCard from "../newsCard/news-card";
 
-function GetNewsFeed() {
+function NewsSection() {
   const sampleNews = [
     {
       media:
@@ -13,6 +13,7 @@ function GetNewsFeed() {
       title: "Some example title",
       excerpt:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
     },
     {
       media:
@@ -20,6 +21,7 @@ function GetNewsFeed() {
       title: "Some more title",
       excerpt:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
     },
     {
       media:
@@ -27,6 +29,7 @@ function GetNewsFeed() {
       title: "news3",
       excerpt:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
     },
     {
       media:
@@ -34,27 +37,16 @@ function GetNewsFeed() {
       title: "news4",
       excerpt:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
     },
   ];
   const [data, setData] = useState(sampleNews);
   const [query, setQuery] = useState("music");
-  const [searchInput, setSearchInput] = useState(query);
   const urls = {
     guardian: `https://content.guardianapis.com/search?q=good&api-key=${process.env.REACT_APP_NEWS_KEY}&section=lifeandstyle`,
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20`,
-    newsapi: `https://newsapi.org/v2/everything?q=Apple&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`,
+    newsapi: `https://newsapi.org/v2/everything?q=${query}&domains=theguardian.com&pageSize=20&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`,
   };
-
-  function handleChange(event) {
-    setSearchInput(event.target.value);
-  }
-
-  function handleClick(event) {
-    event.preventDefault();
-    setQuery(searchInput);
-    console.log(searchInput);
-    setSearchInput("");
-  }
 
   //   -----NEWSCATCHER-----
   async function fetchAPI(url, setResp) {
@@ -65,9 +57,8 @@ function GetNewsFeed() {
         },
       })
       .then((response) => {
-        console.log(response);
         setResp(response.data.articles);
-        console.log(response.data.articles);
+        console.log(response.data.articles[0].excerpt);
       })
       .catch((e) => {
         console.log("ERROR MESSAGE: " + e);
@@ -77,7 +68,6 @@ function GetNewsFeed() {
 
   useEffect(() => {
     fetchAPI(urls.newscatcher, setData);
-    console.log(data);
   }, [query]);
 
   if (data.length === 0) {
@@ -85,39 +75,64 @@ function GetNewsFeed() {
   }
 
   return (
-    <>
+    <div className={styles.news_section}>
       <SearchBubbles setQuery={setQuery} />
-      <SearchComponent
-        handleChange={handleChange}
-        handleClick={handleClick}
-        searchInput={searchInput}
-      />
-      <div class="newsfeed">
+      <div className={styles.newsfeed}>
         {data.map((element, index) => (
-          <div key={index} class="news-item">
-            <img src={element.media} alt={element.title} class="news-images" />
-            <h3 class="news-title">{element.title}</h3>
-            <div class="news-excerpt">{element.excerpt}</div>
-          </div>
+          <>
+            {index === 4 && (
+              <div className={styles.api_space}> Space for API 1</div>
+            )}
+            {index === 9 && (
+              <div className={styles.api_space}> Space for API 2</div>
+            )}
+            {index === 14 && (
+              <div className={styles.api_space}> Space for API 2</div>
+            )}
+            <NewsCard
+              key={index}
+              url={element.url}
+              media={element.media}
+              title={element.title}
+              excerpt={element.excerpt}
+            />
+          </>
         ))}
       </div>
-    </>
+    </div>
   );
 }
-export default GetNewsFeed;
-
-//-----NEWSAPI----------
-//   async function fetchAPI(url, setResp) {
-//     axios
-//       .get(url)
-//       .then((data) => console.log(data))
-//       .catch((e) => console.log(e));
-//   }
+export default NewsSection;
 
 // ------THE GUARDIAN---------
 //   async function fetchAPI(url, setResp) {
 //     axios
 //       .get(url)
 //       .then((data) => setResp(data.data.response.results))
-//       .catch((e) => console.log(e));
+//       .catch((e) => {
+//         console.log("ERROR MESSAGE: " + e);
+//         setData(sampleNews);
+//       });
 //   }
+
+// // -----NEWSAPI----------
+// async function fetchAPI(url, setResp) {
+//   axios
+//     .get(url)
+//     .then((response) => setData(response.data.articles))
+//     .catch((e) => {
+//       console.log("ERROR MESSAGE: " + e);
+//       setData(sampleNews);
+//     });
+// }
+
+// function handleChange(event) {
+//   setSearchInput(event.target.value);
+// }
+
+// function handleClick(event) {
+//   event.preventDefault();
+//   setQuery(searchInput);
+//   console.log(searchInput);
+//   setSearchInput("");
+// }

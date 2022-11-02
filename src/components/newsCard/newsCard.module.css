@@ -1,0 +1,14 @@
+.news_item {
+  margin: 16px 0;
+  color: inherit;
+  text-decoration: inherit;
+}
+.news_images {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.news_excerpt {
+  line-height: 1.5em;
+  color: var(--primary-accent);
+}
