@@ -4,9 +4,106 @@ import styles from "./newsSection.module.css";
 import "../../root.css";
 import SearchBubbles from "../searchBubbles/search-bubbles";
 import NewsCard from "../newsCard/news-card";
+import GetSpacePhotos from "../SpacePhotosComponent/space-photos";
 
 function NewsSection() {
   const sampleNews = [
+    {
+      media:
+        "https://images.pexels.com/photos/6475297/pexels-photo-6475297.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Some example title",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/914929/pexels-photo-914929.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Some more title",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "news3",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/92870/pexels-photo-92870.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "news4",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/6475297/pexels-photo-6475297.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Some example title",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/914929/pexels-photo-914929.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Some more title",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "news3",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/92870/pexels-photo-92870.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "news4",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/6475297/pexels-photo-6475297.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Some example title",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/914929/pexels-photo-914929.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Some more title",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "news3",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
+    {
+      media:
+        "https://images.pexels.com/photos/92870/pexels-photo-92870.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "news4",
+      excerpt:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
+      url: "https://theuselessweb.com/",
+    },
     {
       media:
         "https://images.pexels.com/photos/6475297/pexels-photo-6475297.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -44,7 +141,7 @@ function NewsSection() {
   const [query, setQuery] = useState("music");
   const urls = {
     guardian: `https://content.guardianapis.com/search?q=good&api-key=${process.env.REACT_APP_NEWS_KEY}&section=lifeandstyle`,
-    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20`,
+    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}-{1}&lang=en&sources=theguardian.com&page_size=20`,
     newsapi: `https://newsapi.org/v2/everything?q=${query}&domains=theguardian.com&pageSize=20&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`,
   };
 
@@ -80,9 +177,7 @@ function NewsSection() {
       <div className={styles.newsfeed}>
         {data.map((element, index) => (
           <>
-            {index === 4 && (
-              <div className={styles.api_space}> Space for API 1</div>
-            )}
+            {index === 4 && <GetSpacePhotos />}
             {index === 9 && (
               <div className={styles.api_space}> Space for API 2</div>
             )}
