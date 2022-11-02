@@ -28,3 +28,13 @@
   align-items: flex-end;
   text-align: center;
 }
+.key_phrase {
+  font-size: 6vh;
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 1vh;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: teal;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}

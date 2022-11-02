@@ -10,6 +10,7 @@ function WelcomeSection() {
         <div className={styles.logo_and_brand}>
           Welcome to Your Comfort Zone.
         </div>
+        <div class={styles.key_phrase}> ~The news without the blues~</div>
         <FadingHeadlines wording="Breathe in" />
         <FadingHeadlines wording="Breathe out" />
       </div>
