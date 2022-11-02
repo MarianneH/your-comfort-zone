@@ -7,6 +7,8 @@ function togglePlay(setIsPlaying, isPlaying, audio) {
   isPlaying ? audio.pause() : audio.play();
 }
 
+const apiKey = process.env.REACT_APP_NASA_APIKEY
+
 export default function GetSpacePhotos() {
   const [photoData, setPhotoData] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -16,7 +18,7 @@ export default function GetSpacePhotos() {
     fetchPhoto();
     async function fetchPhoto() {
       const res = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=zQQigcCrtZ7mcVM1M3IHYjNajMcKLum3oGgf0ulz`
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
       );
       const data = await res.json();
       setPhotoData(data);
