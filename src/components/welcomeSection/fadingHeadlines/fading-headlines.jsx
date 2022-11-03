@@ -10,6 +10,7 @@ function FadingHeadlines({ wording }) {
 
   useEffect(() => {
     let thisSection = section.current;
+    console.log();
     if (inView === true) {
       thisSection.classList.add(styles.fade);
     } else if (inView === false) {
