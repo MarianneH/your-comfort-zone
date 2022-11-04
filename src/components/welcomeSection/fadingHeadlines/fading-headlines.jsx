@@ -47,7 +47,6 @@ function FadingHeadlines({ wording }) {
   return (
     <Parallax
       onProgressChange={(progress) => {
-        console.log(progress);
         setProgressOnScreen(progress);
       }}
     >

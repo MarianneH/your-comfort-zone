@@ -24,7 +24,7 @@ function Heading({ text, arc, radius }) {
         ))}
       </h1>
       <div className={styles.image}>
-        <img src={welcome} alt="hello" />
+        {/* <img src={welcome} alt="hello" /> */}
       </div>
     </div>
   );

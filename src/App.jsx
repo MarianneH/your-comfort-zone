@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/home";
 import AboutUs from "./pages/AboutUs/about-us";
-import { ParallaxProvider } from "react-scroll-parallax";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { useState } from "react";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             <Route element={<Home />} exact path="/" />
             <Route element={<AboutUs />} path="/about-us" />
           </Routes>
-        </Router>
+        </Router>{" "}
       </div>
     </ParallaxProvider>
   );
