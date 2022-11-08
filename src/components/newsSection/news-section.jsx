@@ -162,7 +162,8 @@ function NewsSection() {
 
   useEffect(() => {
     fetchAPI(urls.newscatcher, setData);
-  }, [query]);
+    console.log(pageNumber);
+  }, [query, pageNumber]);
 
   if (data.length === 0) {
     return <div>no use today</div>;
@@ -170,7 +171,7 @@ function NewsSection() {
 
   return (
     <div className={styles.news_section}>
-      <SearchBubbles setQuery={setQuery} />
+      <SearchBubbles setQuery={setQuery} setPageNumber={setPageNumber} />
       <div className={styles.newsfeed}>
         {data.map((element, index) => (
           <div key={index}>
