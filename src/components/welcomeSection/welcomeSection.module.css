@@ -2,16 +2,15 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: 100vw;
   z-index: -1;
 }
 
 .image {
   position: absolute;
-  width: 100%;
-  height: 120%;
+  width: 100vw;
+  height: 200%;
   z-index: -1;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .content_container {
   display: flex;
