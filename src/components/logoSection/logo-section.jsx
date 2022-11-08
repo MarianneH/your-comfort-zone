@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./circularHeading.module.css";
+import styles from "./logoSection.module.css";
 import welcome from "../../assets/logo.png";
 import circle from "../../assets/your-comfort-zone.svg";
 import { Parallax } from "react-scroll-parallax";
 
-function Heading() {
+function LogoSection() {
   return (
     <div className={styles.container}>
       <Parallax rotate={[0, 360]}>
@@ -17,4 +17,4 @@ function Heading() {
   );
 }
 
-export default Heading;
+export default LogoSection;
