@@ -1,27 +1,30 @@
-@import url("https://fonts.googleapis.com/css?family=Amatic+SC&display=swap");
-
 .container {
   height: 100vh;
+  width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.circle {
+  width: 50vw;
 }
 
-.heading {
-  font-family: "Amatic SC", cursive;
-  font-size: 7vh;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-  text-align: center;
+.image img {
+  width: 30vw;
   position: absolute;
-  left: 50%;
-  /* I think this works for centering? */
-  top: calc(12% - 64px);
-  -webkit-transform: translate(-50%, calc(-50% - 64px));
-  -ms-transform: translate(-50%, calc(-50% - 64px));
-  transform: translate(-50%, calc(-50% - 64px));
+  top: 35%;
+  left: 37%;
 }
 
-.heading span {
-  position: absolute;
+@media (max-width: 700px) {
+  .circle {
+    width: 90vw;
+  }
+  .image img {
+    width: 50vw;
+    top: 40%;
+    left: 27%;
+  }
 }

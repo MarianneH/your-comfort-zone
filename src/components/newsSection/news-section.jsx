@@ -175,7 +175,7 @@ function NewsSection() {
       <SearchBubbles setQuery={setQuery} />
       <div className={styles.newsfeed}>
         {data.map((element, index) => (
-          <>
+          <div key={index}>
             {index === 4 && <GetSpacePhotos />}
             {index === 9 && (
               <div className={styles.api_space}> Space for API 2</div>
@@ -190,7 +190,7 @@ function NewsSection() {
               title={element.title}
               excerpt={element.excerpt}
             />
-          </>
+          </div>
         ))}
       </div>
     </div>
