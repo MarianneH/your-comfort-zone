@@ -139,13 +139,11 @@ function NewsSection() {
   ];
   const [data, setData] = useState(sampleNews);
   const [query, setQuery] = useState("music");
+  const [pageNumber, setPageNumber] = useState(1);
   const urls = {
-    guardian: `https://content.guardianapis.com/search?q=good&api-key=${process.env.REACT_APP_NEWS_KEY}&section=lifeandstyle`,
-    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20`,
-    newsapi: `https://newsapi.org/v2/everything?q=${query}&domains=theguardian.com&pageSize=20&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`,
+    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
   };
 
-  //   -----NEWSCATCHER-----
   async function fetchAPI(url, setResp) {
     axios
       .get(url, {
@@ -197,28 +195,6 @@ function NewsSection() {
   );
 }
 export default NewsSection;
-
-// ------THE GUARDIAN---------
-//   async function fetchAPI(url, setResp) {
-//     axios
-//       .get(url)
-//       .then((data) => setResp(data.data.response.results))
-//       .catch((e) => {
-//         console.log("ERROR MESSAGE: " + e);
-//         setData(sampleNews);
-//       });
-//   }
-
-// // -----NEWSAPI----------
-// async function fetchAPI(url, setResp) {
-//   axios
-//     .get(url)
-//     .then((response) => setData(response.data.articles))
-//     .catch((e) => {
-//       console.log("ERROR MESSAGE: " + e);
-//       setData(sampleNews);
-//     });
-// }
 
 // function handleChange(event) {
 //   setSearchInput(event.target.value);
