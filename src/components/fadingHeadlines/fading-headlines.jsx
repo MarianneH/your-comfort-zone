@@ -9,13 +9,14 @@ function FadingHeadlines({ wording }) {
   useEffect(() => {
     let thisSection = section.current;
     let startFadeIn = 0.22;
-    let finishFadeIn = 0.4;
-    let startFadeOut = 0.55;
+    let finishFadeIn = 0.47;
+    let startFadeOut = 0.53;
     let finishFadeout = 0.73;
 
     let fadingSpace = finishFadeIn - startFadeIn;
     if (progressOnScreen <= startFadeIn || progressOnScreen >= finishFadeout) {
       thisSection.style.opacity = 0;
+      thisSection.style.fontSize = "8vh";
     } else if (
       progressOnScreen < finishFadeIn &&
       progressOnScreen > startFadeIn
@@ -23,6 +24,7 @@ function FadingHeadlines({ wording }) {
       let opacity =
         (progressOnScreen - startFadeIn) / (fadingSpace / 100) / 100;
       thisSection.style.opacity = opacity;
+      thisSection.style.fontSize = opacity + 8 + "vh";
     } else if (
       progressOnScreen > startFadeOut &&
       progressOnScreen < finishFadeout
@@ -30,11 +32,13 @@ function FadingHeadlines({ wording }) {
       let opacity =
         (finishFadeout - progressOnScreen) / (fadingSpace / 100) / 100;
       thisSection.style.opacity = opacity;
+      thisSection.style.fontSize = 8 + opacity + "vh";
     } else if (
       progressOnScreen >= finishFadeIn &&
       progressOnScreen <= startFadeOut
     ) {
       thisSection.style.opacity = 1;
+      thisSection.style.fontSize = "9vh";
     }
   }, [progressOnScreen]);
 
