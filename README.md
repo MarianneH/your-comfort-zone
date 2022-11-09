@@ -7,12 +7,18 @@ We want to create a website that allows users to flee from bad news. Therefore w
 We are decorating the news with additional comforting elements. Like a look into space (via NASA API), cute fox images, Sudokus, Music and so on.
 
 # Packages used
-axios, react-router-dom
-React Scroll Parallax: https://react-scroll-parallax.damnthat.tv/docs/intro
-axios: 
+* axios, react-router-dom
+
+* React Scroll Parallax: https://react-scroll-parallax.damnthat.tv/docs/intro
+
+ 
 
 
 
 # Videos that helped building the page 
 Infinite Scrolling With React - Tutorial - by Web Dev Simplified 
 https://www.youtube.com/watch?v=NZKUirTtxcg 
+
+
+# Other Ressources
+* loading indecator from: http://ajaxloadingimages.net/svg
