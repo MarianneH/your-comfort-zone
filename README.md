@@ -7,7 +7,10 @@ We want to create a website that allows users to flee from bad news. Therefore w
 We are decorating the news with additional comforting elements. Like a look into space (via NASA API), cute fox images, Sudokus, Music and so on.
 
 # Packages used
-Reacht Scroll Parallax: https://react-scroll-parallax.damnthat.tv/docs/intro
+axios, react-router-dom
+React Scroll Parallax: https://react-scroll-parallax.damnthat.tv/docs/intro
+axios: 
+
 
 
 # Videos that helped building the page 
