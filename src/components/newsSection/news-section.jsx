@@ -7,12 +7,15 @@ import NewsCard from "../newsCard/news-card";
 import GetSpacePhotos from "../SpacePhotosComponent/space-photos";
 
 function NewsSection() {
-  const [data, setData] = useState([]); //books
-  const [query, setQuery] = useState("music");
+  const [data, setData] = useState([]);
+  const [query, setQuery] = useState("dogs");
   const [pageNumber, setPageNumber] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
   const [hasMore, setHasMore] = useState(false);
+  const urls = {
+    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
+  };
+
   const observer = useRef();
   const lastNewsElementRef = useCallback(
     (node) => {
@@ -23,18 +26,13 @@ function NewsSection() {
           setPageNumber((prevPageNumber) => prevPageNumber + 1);
         }
       });
-
       if (node) observer.current.observe(node);
     },
     [loading, hasMore]
   );
-  const urls = {
-    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
-  };
 
   async function fetchAPI(url, setResp) {
     setLoading(true);
-    setError(false);
     axios
       .get(url, {
         headers: {
@@ -116,7 +114,6 @@ function NewsSection() {
         ))}
       </div>
       <div>{loading && "Loading ..."}</div>
-      <div>{error && "Error"}</div>
     </div>
   );
 }
