@@ -13,7 +13,7 @@ const bubblesContent = [
   { name: "sport", src: sport },
 ];
 
-function SearchBubbles({ setQuery }) {
+function SearchBubbles({ setQuery, setPageNumber, setData }) {
   return (
     <div className={styles.search_bubbles}>
       {bubblesContent.map((element, index) => (
@@ -21,7 +21,11 @@ function SearchBubbles({ setQuery }) {
           key={index}
           className={styles.bubble}
           name={element.name}
-          onClick={() => setQuery(element.name)}
+          onClick={() => {
+            setQuery(element.name);
+            setPageNumber(1);
+            setData([]);
+          }}
         >
           <img name="music" src={element.src} alt={element.name} />
         </div>
