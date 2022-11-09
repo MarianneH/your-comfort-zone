@@ -1,11 +1,11 @@
 import styles from "./loadingIndicator.module.css";
-import loading from "../../assets/loading.gif";
+import { ReactComponent as Loading } from "../../assets/loading.svg";
 
 function LoadingIndicator() {
   return (
     <div className={styles.loading}>
+      <Loading />
       <div> loading ...</div>
-      <img src={loading} alt="loading indicator" />
     </div>
   );
 }
