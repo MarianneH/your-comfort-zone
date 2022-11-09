@@ -7,144 +7,18 @@ import NewsCard from "../newsCard/news-card";
 import GetSpacePhotos from "../SpacePhotosComponent/space-photos";
 
 function NewsSection() {
-  const sampleNews = [
-    {
-      media:
-        "https://images.pexels.com/photos/6475297/pexels-photo-6475297.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Some example title",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/914929/pexels-photo-914929.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Some more title",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "news3",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/92870/pexels-photo-92870.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "news4",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/6475297/pexels-photo-6475297.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Some example title",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/914929/pexels-photo-914929.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Some more title",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "news3",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/92870/pexels-photo-92870.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "news4",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/6475297/pexels-photo-6475297.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Some example title",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/914929/pexels-photo-914929.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Some more title",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "news3",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/92870/pexels-photo-92870.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "news4",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/6475297/pexels-photo-6475297.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Some example title",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/914929/pexels-photo-914929.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Some more title",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/810775/pexels-photo-810775.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "news3",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-    {
-      media:
-        "https://images.pexels.com/photos/92870/pexels-photo-92870.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "news4",
-      excerpt:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum doloribus adipisci repellendus libero neque dicta corporis officiis, eligendi at similique iure perferendis autem voluptas suscipit dignissimos labore ad ipsam illo!",
-      url: "https://theuselessweb.com/",
-    },
-  ];
-  const [data, setData] = useState(sampleNews);
+  const [data, setData] = useState([]); //books
   const [query, setQuery] = useState("music");
   const [pageNumber, setPageNumber] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
   const urls = {
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
   };
 
   async function fetchAPI(url, setResp) {
+    setLoading(true);
     axios
       .get(url, {
         headers: {
@@ -152,11 +26,16 @@ function NewsSection() {
         },
       })
       .then((response) => {
-        setResp(response.data.articles);
+        console.log(response.data.total_hits); //check how many results there are
+        setResp((prevResp) => {
+          console.log(...new Set(prevResp));
+          return [...new Set([...prevResp, ...response.data.articles])];
+        });
+
+        setHasMore(response.data.articles.length > 0);
       })
       .catch((e) => {
         console.log("ERROR MESSAGE: " + e);
-        setData(sampleNews);
       });
   }
 
@@ -171,7 +50,11 @@ function NewsSection() {
 
   return (
     <div className={styles.news_section}>
-      <SearchBubbles setQuery={setQuery} setPageNumber={setPageNumber} />
+      <SearchBubbles
+        setQuery={setQuery}
+        setPageNumber={setPageNumber}
+        setData={setData}
+      />
       <div className={styles.newsfeed}>
         {data.map((element, index) => (
           <div key={index}>
