@@ -5,6 +5,7 @@ import "../../root.css";
 import SearchBubbles from "../searchBubbles/search-bubbles";
 import NewsCard from "../newsCard/news-card";
 import GetSpacePhotos from "../SpacePhotosComponent/space-photos";
+import LoadingIndicator from "../loadingIndicator/loading-indicator";
 
 function NewsSection() {
   const [data, setData] = useState([]);
@@ -113,7 +114,7 @@ function NewsSection() {
           </div>
         ))}
       </div>
-      <div>{loading && "Loading ..."}</div>
+      <div>{loading && <LoadingIndicator />}</div>
     </div>
   );
 }
