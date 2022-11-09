@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight&family=Roboto:ital,wght@1,100&family=Work+Sans:ital,wght@1,300&display=swap");
+
+.breathe_section {
+  font-size: 8vh;
+  height: 120vh;
+  color: #1aa170;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  font-family: "Inter Tight", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Work Sans", sans-serif;
+}
+
+.breathe_in_out {
+  text-align: center;
+  position: sticky;
+  top: 50%;
+}

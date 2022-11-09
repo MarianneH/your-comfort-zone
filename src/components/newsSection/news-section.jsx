@@ -141,7 +141,7 @@ function NewsSection() {
   const [query, setQuery] = useState("music");
   const urls = {
     guardian: `https://content.guardianapis.com/search?q=good&api-key=${process.env.REACT_APP_NEWS_KEY}&section=lifeandstyle`,
-    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}-{1}&lang=en&sources=theguardian.com&page_size=20`,
+    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20`,
     newsapi: `https://newsapi.org/v2/everything?q=${query}&domains=theguardian.com&pageSize=20&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`,
   };
 
@@ -155,7 +155,6 @@ function NewsSection() {
       })
       .then((response) => {
         setResp(response.data.articles);
-        console.log(response.data.articles[0].excerpt);
       })
       .catch((e) => {
         console.log("ERROR MESSAGE: " + e);
@@ -176,7 +175,7 @@ function NewsSection() {
       <SearchBubbles setQuery={setQuery} />
       <div className={styles.newsfeed}>
         {data.map((element, index) => (
-          <>
+          <div key={index}>
             {index === 4 && <GetSpacePhotos />}
             {index === 9 && (
               <div className={styles.api_space}> Space for API 2</div>
@@ -191,7 +190,7 @@ function NewsSection() {
               title={element.title}
               excerpt={element.excerpt}
             />
-          </>
+          </div>
         ))}
       </div>
     </div>

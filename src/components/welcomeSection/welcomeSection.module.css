@@ -2,24 +2,20 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: 100vw;
-  transform-style: preserve-3d;
   z-index: -1;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  padding: 8px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .image {
   position: absolute;
-  height: 100%;
   width: 100vw;
-  object-fit: cover;
+  height: 200%;
   z-index: -1;
-  transform: translateZ(-20px) scale(3);
+  overflow-x: hidden;
 }
-
+.content_container {
+  display: flex;
+  flex-direction: column;
+}
 .logo_and_brand {
   height: 55vh;
   font-size: 8vh;
@@ -27,14 +23,4 @@
   justify-content: center;
   align-items: flex-end;
   text-align: center;
-}
-.key_phrase {
-  font-size: 6vh;
-  text-align: center;
-  font-style: italic;
-  font-weight: normal;
-  margin-top: 1vh;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: teal;
-  text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }

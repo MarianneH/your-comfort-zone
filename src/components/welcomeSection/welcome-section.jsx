@@ -1,16 +1,21 @@
 import styles from "./welcomeSection.module.css";
-import FadingHeadlines from "./fadingHeadlines/fading-headlines";
+import FadingHeadlines from "../fadingHeadlines/fading-headlines";
 import background from "../../assets/welcome-image.jpeg";
+import LogoSection from "../logoSection/logo-section";
+import { Parallax } from "react-scroll-parallax";
 
 function WelcomeSection() {
   return (
     <div className={styles.welcome_section}>
-      <img src={background} alt="" className={styles.image} />
+      <Parallax translateY={[-40, 40]} className={styles.image}>
+        <img src={background} alt="Mountains and Sky" />
+      </Parallax>
       <div className={styles.content_container}>
-        <div className={styles.logo_and_brand}>
-          Welcome to Your Comfort Zone.
-        </div>
-        <div class={styles.key_phrase}> ~the news without the blues~</div>
+        <LogoSection
+          text="~ Welcome to Your Comfort Zone "
+          arc={360}
+          radius={180}
+        />
         <FadingHeadlines wording="Breathe in" />
         <FadingHeadlines wording="Breathe out" />
       </div>
