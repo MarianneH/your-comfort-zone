@@ -17,7 +17,6 @@ function NewsSection() {
   const [showModal, setShowModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   const [modalData, setModalData] = useState(data[0]);
-  const [image, setImage] = useState("");
 
   const urls = {
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
@@ -75,7 +74,6 @@ function NewsSection() {
 
   useEffect(() => {
     setModalData(data[modalIndex]);
-    console.log(modalData);
   }, [showModal]);
 
   useEffect(() => {
@@ -101,7 +99,6 @@ function NewsSection() {
                   excerpt={element.excerpt}
                   setShowModal={setShowModal}
                   setModalIndex={setModalIndex}
-                  setImage={setImage}
                   index={index}
                 />
               </div>

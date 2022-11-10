@@ -1,28 +1,15 @@
 import styles from "./newsModal.module.css";
 import React from "react";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import fallback from "../../assets/fallback.jpeg";
+import { useEffect } from "react";
 
 function NewsModal({ data, setShowModal }) {
-  const [image, setImage] = useState("");
   function handleClick() {
     setShowModal(false);
+    document.body.style.overflow = "scroll";
   }
 
   useEffect(() => {
-    console.log(data);
     document.body.style.overflow = "hidden";
-    setTimeout(
-      axios
-        .get(data.media)
-        .then(() => setImage(data.media))
-        .catch((e) => {
-          console.log(e.message);
-          setImage(fallback);
-        }),
-      200
-    );
   }, [data]);
 
   return (
