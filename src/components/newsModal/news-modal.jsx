@@ -7,7 +7,6 @@ import fallback from "../../assets/fallback.jpeg";
 function NewsModal({ data, setShowModal }) {
   const [image, setImage] = useState("");
   function handleClick() {
-    document.body.style.overflow = "scroll";
     setShowModal(false);
   }
 
