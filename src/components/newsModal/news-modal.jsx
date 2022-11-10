@@ -1,10 +1,16 @@
 import styles from "./newsModal.module.css";
 import React from "react";
+import { useEffect } from "react";
 
 function NewsModal({ data, setShowModal }) {
   function handleClick() {
+    document.body.style.overflow = "scroll";
     setShowModal(false);
   }
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+  }, [data]);
   return (
     <div className={styles.modal_container} onClick={handleClick}>
       <div className={styles.modal}>
