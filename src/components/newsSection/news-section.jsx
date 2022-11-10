@@ -6,6 +6,7 @@ import SearchBubbles from "../searchBubbles/search-bubbles";
 import NewsCard from "../newsCard/news-card";
 import GetSpacePhotos from "../SpacePhotosComponent/space-photos";
 import LoadingIndicator from "../loadingIndicator/loading-indicator";
+import NewsModal from "../newsModal/news-modal";
 
 function NewsSection() {
   const [data, setData] = useState([]);
@@ -13,6 +14,10 @@ function NewsSection() {
   const [pageNumber, setPageNumber] = useState(1);
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalIndex, setModalIndex] = useState(0);
+  const [modalData, setModalData] = useState(data[0]);
+
   const urls = {
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
   };
@@ -45,7 +50,6 @@ function NewsSection() {
         currentData.forEach((e) => {
           delete e._score;
           delete e.author;
-          delete e.authors;
           delete e.country;
           delete e._id;
           delete e.topic;
@@ -53,11 +57,9 @@ function NewsSection() {
           delete e.rights;
           delete e.rank;
           delete e.published_date_precision;
-          delete e.published_date;
           delete e.language;
           delete e.is_opinion;
           delete e.clean_url;
-          delete e.summary;
         });
         setResp((prevResp) => {
           return [...new Set([...prevResp, ...currentData])];
@@ -69,6 +71,10 @@ function NewsSection() {
         console.log("ERROR MESSAGE : " + e);
       });
   }
+
+  useEffect(() => {
+    setModalData(data[modalIndex]);
+  }, [showModal]);
 
   useEffect(() => {
     fetchAPI(urls.newscatcher, setData);
@@ -91,6 +97,9 @@ function NewsSection() {
                   media={element.media}
                   title={element.title}
                   excerpt={element.excerpt}
+                  setShowModal={setShowModal}
+                  setModalIndex={setModalIndex}
+                  index={index}
                 />
               </div>
             )}
@@ -108,6 +117,9 @@ function NewsSection() {
                   media={element.media}
                   title={element.title}
                   excerpt={element.excerpt}
+                  setShowModal={setShowModal}
+                  setModalIndex={setModalIndex}
+                  index={index}
                 />
               </div>
             )}
@@ -115,6 +127,11 @@ function NewsSection() {
         ))}
       </div>
       <div>{loading && <LoadingIndicator />}</div>
+      <div>
+        {showModal && (
+          <NewsModal data={modalData} setShowModal={setShowModal} />
+        )}
+      </div>
     </div>
   );
 }
