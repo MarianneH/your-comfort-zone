@@ -1,4 +1,7 @@
 import styles from "./newsCard.module.css";
+import fallback from "../../assets/fallback.jpeg";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function NewsCard({
   index,
@@ -7,7 +10,18 @@ function NewsCard({
   excerpt,
   setShowModal,
   setModalIndex,
+  setImage,
 }) {
+  useEffect(() => {
+    axios
+      .get(media)
+      .then(() => setImage(media))
+      .catch((e) => {
+        console.log(e);
+        setImage(fallback);
+      });
+  }, []);
+
   return (
     <div
       key={index}
@@ -17,7 +31,7 @@ function NewsCard({
       }}
       className={styles.news_item}
     >
-      <img src={media} alt={title} className={styles.news_images} />
+      <img src={image} alt={title} className={styles.news_images} />
       <div>
         <h3 className={styles.news_title}>{title}</h3>
         <div className={styles.news_excerpt}>{excerpt}</div>
