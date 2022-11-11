@@ -6,8 +6,8 @@ import NewsCard from "../../components/newsCard/news-card";
 import GetSpacePhotos from "../../components/SpacePhotosComponent/space-photos";
 import LoadingIndicator from "../../components/loadingIndicator/loading-indicator";
 import NewsModal from "../../components/newsModal/news-modal";
-import fetchNewsAPI from "../../hooks/fetch-newsAPI";
-import useFetchAPI from "../../hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
+import removeKeysOfObject from "../../hooks/remove-keys-of-object";
 
 function NewsSection() {
   const [data, setData] = useState([]);
@@ -23,6 +23,20 @@ function NewsSection() {
   const urls = {
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
   };
+  let keysToRemove = [
+    "_score",
+    "author",
+    "country",
+    "_id",
+    "topic",
+    "twitter_account",
+    "rights",
+    "rank",
+    "published_date_precision",
+    "language",
+    "is_opinion",
+    "clean_url",
+  ];
 
   const observer = useRef();
   const lastNewsElementRef = useCallback(
@@ -43,10 +57,24 @@ function NewsSection() {
     setModalData(data[modalIndex]);
   }, [showModal]);
 
+  const { dataX, errorX } = useFetch(
+    urls.newscatcher,
+    process.env.REACT_APP_NEWS_CATCHER_KEY,
+    setLoading
+  );
+
   useEffect(() => {
-    fetchNewsAPI(urls.newscatcher, setData, setLoading, setApiResults);
-    setHasMore(apiResults > data.length);
-  }, [query, pageNumber]);
+    if (dataX !== null) {
+      setData((prevData) => {
+        return removeKeysOfObject(
+          [...prevData, ...dataX.articles],
+          keysToRemove
+        );
+      });
+      setApiResults(dataX.total_hits);
+      setHasMore(apiResults > data.length);
+    }
+  }, [dataX]);
 
   return (
     <div className={styles.news_section}>

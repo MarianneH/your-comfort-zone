@@ -1,25 +1,29 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const useFetch = (url) => {
-  const [data, setdata] = useState(null);
-  const [loading, setloading] = useState(true);
-  const [error, seterror] = useState("");
+function useFetch(url, key, setLoading) {
+  const [dataX, setData] = useState(null);
+  const [errorX, setError] = useState(null);
 
   useEffect(() => {
+    setLoading(true);
     axios
-      .get(url)
+      .get(url, {
+        headers: {
+          "x-api-key": key,
+        },
+      })
       .then((response) => {
-        seterror(data.error);
-        setdata(response);
-        setloading(false);
+        setData(response.data);
+        setLoading(false);
       })
       .catch((e) => {
         console.log("ERROR MESSAGE : " + e);
+        setError(e);
       });
   }, [url]);
 
-  return { data, loading, error };
-};
+  return { dataX, errorX };
+}
 
 export default useFetch;
