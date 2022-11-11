@@ -1,7 +1,7 @@
 import styles from "./welcomeSection.module.css";
-import FadingHeadlines from "../fadingHeadlines/fading-headlines";
+import FadingHeadlines from "../../components/fadingHeadlines/fading-headlines";
 import background from "../../assets/welcome-image.jpeg";
-import LogoSection from "../logoSection/logo-section";
+import LogoSection from "../../components/logoSection/logo-section";
 import { Parallax } from "react-scroll-parallax";
 
 function WelcomeSection() {
@@ -11,11 +11,7 @@ function WelcomeSection() {
         <img src={background} alt="Mountains and Sky" />
       </Parallax>
       <div className={styles.content_container}>
-        <LogoSection
-          text="~ Welcome to Your Comfort Zone "
-          arc={360}
-          radius={180}
-        />
+        <LogoSection />
         <FadingHeadlines wording="Breathe in" />
         <FadingHeadlines wording="Breathe out" />
       </div>
