@@ -1,6 +1,6 @@
 import styles from "./newsModal.module.css";
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import fallback from "../../assets/fallback.jpeg";
 
 function NewsModal({ data, setShowModal }) {
   function handleClick() {
@@ -28,7 +28,13 @@ function NewsModal({ data, setShowModal }) {
               {data.published_date} - {data.authors}
             </div>
             <div className={styles.image}>
-              <img src={data.media} alt={data.title} />{" "}
+              <img
+                src={data.media}
+                onError={(e) => {
+                  e.target.src = fallback;
+                }}
+                alt={data.title}
+              />{" "}
             </div>
             <div className={styles.summary}>{data.summary}</div>
             <a

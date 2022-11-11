@@ -17,6 +17,7 @@ function NewsSection() {
   const [showModal, setShowModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   const [modalData, setModalData] = useState(data[0]);
+  const [newsImage, setNewsImage] = useState("");
 
   const urls = {
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
@@ -48,18 +49,20 @@ function NewsSection() {
       .then((response) => {
         let currentData = response.data.articles;
         currentData.forEach((e) => {
-          delete e._score;
-          delete e.author;
-          delete e.country;
-          delete e._id;
-          delete e.topic;
-          delete e.twitter_account;
-          delete e.rights;
-          delete e.rank;
-          delete e.published_date_precision;
-          delete e.language;
-          delete e.is_opinion;
-          delete e.clean_url;
+          [
+            "_score",
+            "author",
+            "country",
+            "_id",
+            "topic",
+            "twitter_account",
+            "rights",
+            "rank",
+            "published_date_precision",
+            "language",
+            "is_opinion",
+            "clean_url",
+          ].forEach((el) => delete e[el]);
         });
         setResp((prevResp) => {
           return [...new Set([...prevResp, ...currentData])];
@@ -93,13 +96,15 @@ function NewsSection() {
             {data.length === index + 1 && (
               <div ref={lastNewsElementRef} key={index}>
                 <NewsCard
+                  index={index}
                   url={element.link}
                   media={element.media}
                   title={element.title}
                   excerpt={element.excerpt}
                   setShowModal={setShowModal}
                   setModalIndex={setModalIndex}
-                  index={index}
+                  setNewsImage={setNewsImage}
+                  newsImage={newsImage}
                 />
               </div>
             )}
@@ -113,13 +118,15 @@ function NewsSection() {
             {data.length !== index + 1 && (
               <div key={index}>
                 <NewsCard
+                  index={index}
                   url={element.link}
                   media={element.media}
                   title={element.title}
                   excerpt={element.excerpt}
                   setShowModal={setShowModal}
                   setModalIndex={setModalIndex}
-                  index={index}
+                  setNewsImage={setNewsImage}
+                  newsImage={newsImage}
                 />
               </div>
             )}
