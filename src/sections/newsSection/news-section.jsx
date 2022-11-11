@@ -18,7 +18,6 @@ function NewsSection() {
   const [showModal, setShowModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   const [modalData, setModalData] = useState(data[0]);
-  const [newsImage, setNewsImage] = useState("");
   const [apiResults, setApiResults] = useState([]);
   const urls = {
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
@@ -38,6 +37,32 @@ function NewsSection() {
     "clean_url",
   ];
 
+  //fetching the data from an API
+  const { dataX, errorX } = useFetch(
+    urls.newscatcher,
+    process.env.REACT_APP_NEWS_CATCHER_KEY,
+    setLoading
+  );
+  //using the data
+  useEffect(() => {
+    if (dataX !== null) {
+      setData((prevData) => {
+        return removeKeysOfObject(
+          [...prevData, ...dataX.articles],
+          keysToRemove
+        );
+      });
+      setApiResults(dataX.total_hits);
+      setHasMore(apiResults > data.length);
+    }
+  }, [dataX]);
+
+  //to display the correct data in the modal
+  useEffect(() => {
+    setModalData(data[modalIndex]);
+  }, [showModal]);
+
+  //implementation of endless scrolling
   const observer = useRef();
   const lastNewsElementRef = useCallback(
     (node) => {
@@ -52,29 +77,6 @@ function NewsSection() {
     },
     [loading, hasMore]
   );
-
-  useEffect(() => {
-    setModalData(data[modalIndex]);
-  }, [showModal]);
-
-  const { dataX, errorX } = useFetch(
-    urls.newscatcher,
-    process.env.REACT_APP_NEWS_CATCHER_KEY,
-    setLoading
-  );
-
-  useEffect(() => {
-    if (dataX !== null) {
-      setData((prevData) => {
-        return removeKeysOfObject(
-          [...prevData, ...dataX.articles],
-          keysToRemove
-        );
-      });
-      setApiResults(dataX.total_hits);
-      setHasMore(apiResults > data.length);
-    }
-  }, [dataX]);
 
   return (
     <div className={styles.news_section}>
@@ -96,8 +98,6 @@ function NewsSection() {
                   excerpt={element.excerpt}
                   setShowModal={setShowModal}
                   setModalIndex={setModalIndex}
-                  setNewsImage={setNewsImage}
-                  newsImage={newsImage}
                 />
               </div>
             )}
@@ -111,8 +111,6 @@ function NewsSection() {
                   excerpt={element.excerpt}
                   setShowModal={setShowModal}
                   setModalIndex={setModalIndex}
-                  setNewsImage={setNewsImage}
-                  newsImage={newsImage}
                 />
               </div>
             )}
