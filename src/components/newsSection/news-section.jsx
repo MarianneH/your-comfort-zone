@@ -6,6 +6,7 @@ import SearchBubbles from "../searchBubbles/search-bubbles";
 import NewsCard from "../newsCard/news-card";
 import GetSpacePhotos from "../SpacePhotosComponent/space-photos";
 import LoadingIndicator from "../loadingIndicator/loading-indicator";
+import NewsModal from "../newsModal/news-modal";
 
 function NewsSection() {
   const [data, setData] = useState([]);
@@ -13,6 +14,11 @@ function NewsSection() {
   const [pageNumber, setPageNumber] = useState(1);
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalIndex, setModalIndex] = useState(0);
+  const [modalData, setModalData] = useState(data[0]);
+  const [newsImage, setNewsImage] = useState("");
+
   const urls = {
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
   };
@@ -43,21 +49,20 @@ function NewsSection() {
       .then((response) => {
         let currentData = response.data.articles;
         currentData.forEach((e) => {
-          delete e._score;
-          delete e.author;
-          delete e.authors;
-          delete e.country;
-          delete e._id;
-          delete e.topic;
-          delete e.twitter_account;
-          delete e.rights;
-          delete e.rank;
-          delete e.published_date_precision;
-          delete e.published_date;
-          delete e.language;
-          delete e.is_opinion;
-          delete e.clean_url;
-          delete e.summary;
+          [
+            "_score",
+            "author",
+            "country",
+            "_id",
+            "topic",
+            "twitter_account",
+            "rights",
+            "rank",
+            "published_date_precision",
+            "language",
+            "is_opinion",
+            "clean_url",
+          ].forEach((el) => delete e[el]);
         });
         setResp((prevResp) => {
           return [...new Set([...prevResp, ...currentData])];
@@ -69,6 +74,10 @@ function NewsSection() {
         console.log("ERROR MESSAGE : " + e);
       });
   }
+
+  useEffect(() => {
+    setModalData(data[modalIndex]);
+  }, [showModal]);
 
   useEffect(() => {
     fetchAPI(urls.newscatcher, setData);
@@ -87,10 +96,15 @@ function NewsSection() {
             {data.length === index + 1 && (
               <div ref={lastNewsElementRef} key={index}>
                 <NewsCard
+                  index={index}
                   url={element.link}
                   media={element.media}
                   title={element.title}
                   excerpt={element.excerpt}
+                  setShowModal={setShowModal}
+                  setModalIndex={setModalIndex}
+                  setNewsImage={setNewsImage}
+                  newsImage={newsImage}
                 />
               </div>
             )}
@@ -104,10 +118,15 @@ function NewsSection() {
             {data.length !== index + 1 && (
               <div key={index}>
                 <NewsCard
+                  index={index}
                   url={element.link}
                   media={element.media}
                   title={element.title}
                   excerpt={element.excerpt}
+                  setShowModal={setShowModal}
+                  setModalIndex={setModalIndex}
+                  setNewsImage={setNewsImage}
+                  newsImage={newsImage}
                 />
               </div>
             )}
@@ -115,6 +134,11 @@ function NewsSection() {
         ))}
       </div>
       <div>{loading && <LoadingIndicator />}</div>
+      <div>
+        {showModal && (
+          <NewsModal data={modalData} setShowModal={setShowModal} />
+        )}
+      </div>
     </div>
   );
 }
