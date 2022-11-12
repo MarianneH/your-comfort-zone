@@ -8,9 +8,12 @@
 .image {
   position: absolute;
   width: 100vw;
-  height: 150%;
-  z-index: -1;
+  height: 75%;
   overflow-x: hidden;
+  display: flex;
+}
+.image img {
+  height: 120%;
 }
 .content_container {
   display: flex;
