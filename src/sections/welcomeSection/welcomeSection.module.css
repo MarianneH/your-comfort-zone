@@ -8,8 +8,9 @@
 .image {
   position: absolute;
   width: 100vw;
-  height: 75%;
+  height: 129%;
   overflow-x: hidden;
+  overflow-y: hidden;
   display: flex;
 }
 .image img {
