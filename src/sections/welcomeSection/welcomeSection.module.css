@@ -8,7 +8,7 @@
 .image {
   position: absolute;
   width: 100vw;
-  height: 200%;
+  height: 150%;
   z-index: -1;
   overflow-x: hidden;
 }

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // key = mostly empty string "" - only relevant if API key has to be passed in headers (like for the news API)
 // setLoading = has to be a state in parent component using const [loading, setloading] = useState(true)
 function useFetch(url, key, setLoading) {
-  const [dataX, setData] = useState(null);
+  const [response, setResponse] = useState(null);
   const [errorX, setError] = useState(null);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function useFetch(url, key, setLoading) {
         },
       })
       .then((response) => {
-        setData(response.data);
+        setResponse(response.data);
         setLoading(false);
       })
       .catch((e) => {
@@ -26,7 +26,7 @@ function useFetch(url, key, setLoading) {
       });
   }, [url]);
 
-  return { dataX, errorX };
+  return { response, errorX };
 }
 
 export default useFetch;

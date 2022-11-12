@@ -27,7 +27,7 @@ function SearchBubbles({ setQuery, setPageNumber, setData }) {
             setData([]);
           }}
         >
-          <img name="music" src={element.src} alt={element.name} />
+          <img name={element.name} src={element.src} alt={element.name} />
         </div>
       ))}
     </div>

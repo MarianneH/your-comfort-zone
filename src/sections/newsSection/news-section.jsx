@@ -11,14 +11,13 @@ import removeKeysOfObject from "../../hooks/remove-keys-of-object";
 
 function NewsSection() {
   const [data, setData] = useState([]);
-  const [query, setQuery] = useState("dogs");
+  const [query, setQuery] = useState("cats");
   const [pageNumber, setPageNumber] = useState(1);
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   const [modalData, setModalData] = useState(data[0]);
-  const [apiResults, setApiResults] = useState([]);
   const urls = {
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
   };
@@ -36,26 +35,24 @@ function NewsSection() {
     "is_opinion",
     "clean_url",
   ];
-
   //fetching the data from an API
-  const { dataX, errorX } = useFetch(
+  const { response, errorX } = useFetch(
     urls.newscatcher,
     process.env.REACT_APP_NEWS_CATCHER_KEY,
     setLoading
   );
   //using the data
   useEffect(() => {
-    if (dataX !== null) {
+    if (response !== null) {
       setData((prevData) => {
         return removeKeysOfObject(
-          [...prevData, ...dataX.articles],
+          [...prevData, ...response.articles],
           keysToRemove
         );
       });
-      setApiResults(dataX.total_hits);
-      setHasMore(apiResults > data.length);
+      setHasMore(response.total_hits >= data.length + 20);
     }
-  }, [dataX]);
+  }, [response]);
 
   //to display the correct data in the modal
   useEffect(() => {
