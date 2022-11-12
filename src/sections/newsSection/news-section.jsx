@@ -81,6 +81,7 @@ function NewsSection() {
         setQuery={setQuery}
         setPageNumber={setPageNumber}
         setData={setData}
+        query={query}
       />
       <div className={styles.newsfeed}>
         {data.map((element, index) => (
