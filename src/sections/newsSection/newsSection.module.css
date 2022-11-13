@@ -9,12 +9,13 @@
 }
 
 .newsfeed {
-  width: 90%;
-  margin: 16px auto;
+  background-color: #edecec;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 25px;
 }
 
 .api_space {

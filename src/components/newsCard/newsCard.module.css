@@ -1,14 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Work+Sans&display=swap");
+
 .news_item {
-  margin: 16px 0;
-  color: inherit;
   text-decoration: inherit;
+  display: block;
+  width: 338px;
+  height: 400px;
+  background-color: white;
 }
+
 .news_images {
-  margin: 0 auto;
-  width: 100%;
+  object-fit: cover;
+  height: 225px;
+  width: 338px;
+}
+
+.news_title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  font-style: normal;
+  letter-spacing: 2px;
+  line-height: 20px;
+  margin-top: 21px;
+  margin-left: 25px;
+  width: 287px;
+  height: 41px;
+  overflow: hidden;
 }
 
 .news_excerpt {
-  line-height: 1.5em;
-  color: var(--primary-accent);
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  font-style: normal;
+  letter-spacing: 4px;
+  line-height: 18px;
+  margin-top: 12px;
+  margin-left: 25px;
+  width: 287px;
+  height: 71px;
+  overflow: hidden;
 }
