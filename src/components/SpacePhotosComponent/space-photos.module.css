@@ -6,7 +6,6 @@
   border-radius: 10px;
   margin: 10px;
   background-color: var(--primary-accent);
-  
 }
 
 .spacePhotoTitle {
@@ -45,9 +44,8 @@
   align-items: center;
   height: 5vh;
   width: 10vh;
-  color:var(--secondary-accent);
+  color: var(--secondary-accent);
   background-color: darkslategrey;
   text-decoration: none;
   border-radius: 10px;
-  
 }
