@@ -1,28 +1,65 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import axios from "axios";
 import styles from "./newsSection.module.css";
 import "../../root.css";
-import SearchBubbles from "../searchBubbles/search-bubbles";
-import NewsCard from "../newsCard/news-card";
-import GetSpacePhotos from "../SpacePhotosComponent/space-photos";
-import LoadingIndicator from "../loadingIndicator/loading-indicator";
-import NewsModal from "../newsModal/news-modal";
+import SearchBubbles from "../../components/searchBubbles/search-bubbles";
+import NewsCard from "../../components/newsCard/news-card";
+import GetSpacePhotos from "../../components/SpacePhotosComponent/space-photos";
+import LoadingIndicator from "../../components/loadingIndicator/loading-indicator";
+import NewsModal from "../../components/newsModal/news-modal";
+import useFetch from "../../hooks/useFetch";
+import removeKeysOfObject from "../../hooks/remove-keys-of-object";
 
 function NewsSection() {
   const [data, setData] = useState([]);
-  const [query, setQuery] = useState("dogs");
+  const [query, setQuery] = useState("cats");
   const [pageNumber, setPageNumber] = useState(1);
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   const [modalData, setModalData] = useState(data[0]);
-  const [newsImage, setNewsImage] = useState("");
-
   const urls = {
     newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
   };
+  let keysToRemove = [
+    "_score",
+    "author",
+    "country",
+    "_id",
+    "topic",
+    "twitter_account",
+    "rights",
+    "rank",
+    "published_date_precision",
+    "language",
+    "is_opinion",
+    "clean_url",
+  ];
+  //fetching the data from an API
+  const { response, errorX } = useFetch(
+    urls.newscatcher,
+    process.env.REACT_APP_NEWS_CATCHER_KEY,
+    setLoading
+  );
+  //using the data
+  useEffect(() => {
+    if (response !== null) {
+      setData((prevData) => {
+        return removeKeysOfObject(
+          [...prevData, ...response.articles],
+          keysToRemove
+        );
+      });
+      setHasMore(response.total_hits >= data.length + 20);
+    }
+  }, [response]);
 
+  //to display the correct data in the modal
+  useEffect(() => {
+    setModalData(data[modalIndex]);
+  }, [showModal]);
+
+  //implementation of endless scrolling
   const observer = useRef();
   const lastNewsElementRef = useCallback(
     (node) => {
@@ -38,83 +75,17 @@ function NewsSection() {
     [loading, hasMore]
   );
 
-  async function fetchAPI(url, setResp) {
-    setLoading(true);
-    axios
-      .get(url, {
-        headers: {
-          "x-api-key": process.env.REACT_APP_NEWS_CATCHER_KEY,
-        },
-      })
-      .then((response) => {
-        let currentData = response.data.articles;
-        currentData.forEach((e) => {
-          [
-            "_score",
-            "author",
-            "country",
-            "_id",
-            "topic",
-            "twitter_account",
-            "rights",
-            "rank",
-            "published_date_precision",
-            "language",
-            "is_opinion",
-            "clean_url",
-          ].forEach((el) => delete e[el]);
-        });
-        setResp((prevResp) => {
-          return [...new Set([...prevResp, ...currentData])];
-        });
-        setHasMore(response.data.total_hits > data.length);
-        setLoading(false);
-      })
-      .catch((e) => {
-        console.log("ERROR MESSAGE : " + e);
-      });
-  }
-
-  useEffect(() => {
-    setModalData(data[modalIndex]);
-  }, [showModal]);
-
-  useEffect(() => {
-    fetchAPI(urls.newscatcher, setData);
-  }, [query, pageNumber]);
-
   return (
     <div className={styles.news_section}>
       <SearchBubbles
         setQuery={setQuery}
         setPageNumber={setPageNumber}
         setData={setData}
+        query={query}
       />
       <div className={styles.newsfeed}>
         {data.map((element, index) => (
           <div key={index}>
-            {data.length === index + 1 && (
-              <div ref={lastNewsElementRef} key={index}>
-                <NewsCard
-                  index={index}
-                  url={element.link}
-                  media={element.media}
-                  title={element.title}
-                  excerpt={element.excerpt}
-                  setShowModal={setShowModal}
-                  setModalIndex={setModalIndex}
-                  setNewsImage={setNewsImage}
-                  newsImage={newsImage}
-                />
-              </div>
-            )}
-            {index === 4 && <GetSpacePhotos />}
-            {index === 9 && (
-              <div className={styles.api_space}> Space for API 2</div>
-            )}
-            {index === 14 && (
-              <div className={styles.api_space}> Space for API 2</div>
-            )}
             {data.length !== index + 1 && (
               <div key={index}>
                 <NewsCard
@@ -125,10 +96,28 @@ function NewsSection() {
                   excerpt={element.excerpt}
                   setShowModal={setShowModal}
                   setModalIndex={setModalIndex}
-                  setNewsImage={setNewsImage}
-                  newsImage={newsImage}
                 />
               </div>
+            )}
+            {data.length === index + 1 && (
+              <div ref={lastNewsElementRef} key={index}>
+                <NewsCard
+                  index={index}
+                  url={element.link}
+                  media={element.media}
+                  title={element.title}
+                  excerpt={element.excerpt}
+                  setShowModal={setShowModal}
+                  setModalIndex={setModalIndex}
+                />
+              </div>
+            )}
+            {index === 4 && <GetSpacePhotos />}
+            {index === 9 && (
+              <div className={styles.api_space}> Space for API 2</div>
+            )}
+            {index === 14 && (
+              <div className={styles.api_space}> Space for API 2</div>
             )}
           </div>
         ))}
