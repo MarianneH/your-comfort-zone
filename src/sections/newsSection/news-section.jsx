@@ -87,7 +87,7 @@ function NewsSection() {
         {data.map((element, index) => (
           <div key={index}>
             {data.length !== index + 1 && (
-              <div key={index}>
+              <div className={styles.newsfeed} key={index}>
                 <NewsCard
                   index={index}
                   url={element.link}

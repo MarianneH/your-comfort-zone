@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styles from "./space-photos.module.css";
 import sound from "./tranquility.mp3";
+import play from "../../assets/play.png";
+import stop from "../../assets/stop.png";
 
 function togglePlay(setIsPlaying, isPlaying, audio) {
   setIsPlaying(!isPlaying);
   isPlaying ? audio.pause() : audio.play();
 }
-
 
 export default function GetSpacePhotos() {
   const [photoData, setPhotoData] = useState(null);
@@ -14,7 +15,6 @@ export default function GetSpacePhotos() {
   const [audio] = useState(new Audio(sound));
 
   useEffect(() => {
-
     fetchPhoto();
     async function fetchPhoto() {
       const res = await fetch(
@@ -29,23 +29,25 @@ export default function GetSpacePhotos() {
 
   return (
     <>
+      <div className={styles.topBox}></div>
       <div className={styles.spacePhotoContainer}>
         <img
           src={photoData.url}
           alt={photoData.title}
           className={styles.spacePhotoImage}
         />
-        <h1 className={styles.spacePhotoTitle} id="space-section">{photoData.title}</h1>
-        <p className={styles.spacePhotoExplanation}>{photoData.explanation}</p>
-          <div className={styles.spacePhotoMusicContainer}>
-            <a 
-            href="#space-section" 
-            className={styles.spacePhotoMusic} 
-            onClick={()=> togglePlay(setIsPlaying,isPlaying, audio)}>
-              {isPlaying ? "Pause" : "Music"}
-            </a>
-          </div>
+        <h1 className={styles.spacePhotoTitle} id="space-section">
+          {photoData.title}
+        </h1>
+        <div
+          href="#space-section"
+          className={styles.spacePhotoMusic}
+          onClick={() => togglePlay(setIsPlaying, isPlaying, audio)}
+        >
+          {isPlaying ? <img src={stop} /> : <img src={play} />}
+        </div>
       </div>
+      <div className={styles.downBox}></div>
     </>
   );
 }
