@@ -18,6 +18,9 @@ function NewsCard({
       }}
       className={styles.news_item}
     >
+      <div className={styles.news_hover}>
+        <div className={styles.news_hover_text}>Read More</div>
+      </div>
       <img
         src={media}
         alt={title}
