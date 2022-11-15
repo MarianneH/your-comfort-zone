@@ -82,6 +82,7 @@
   .news_item {
     width: 480px;
     height: 475px;
+    overflow-x: hidden;
   }
 
   .news_hover {
