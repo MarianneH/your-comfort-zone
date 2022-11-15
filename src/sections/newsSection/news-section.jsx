@@ -83,53 +83,51 @@ function NewsSection() {
         setData={setData}
         query={query}
       />
-      <section>
-        <div className={styles.wrapper}>
-          <div className={styles.newsfeed}>
-            {data.map((element, index) => (
-              <div key={index}>
-                {data.length !== index + 1 && (
-                  <div className={styles.newsfeed} key={index}>
-                    <NewsCard
-                      index={index}
-                      url={element.link}
-                      media={element.media}
-                      title={element.title}
-                      excerpt={element.excerpt}
-                      setShowModal={setShowModal}
-                      setModalIndex={setModalIndex}
-                    />
-                  </div>
-                )}
-                {data.length === index + 1 && (
-                  <div ref={lastNewsElementRef} key={index}>
-                    <NewsCard
-                      index={index}
-                      url={element.link}
-                      media={element.media}
-                      title={element.title}
-                      excerpt={element.excerpt}
-                      setShowModal={setShowModal}
-                      setModalIndex={setModalIndex}
-                    />
-                  </div>
-                )}
-                {index === 4 && <GetSpacePhotos />}
-                {index === 9 && (
-                  <div className={styles.api_space}> Space for API 2</div>
-                )}
-                {index === 14 && (
-                  <div className={styles.api_space}> Space for API 2</div>
-                )}
-              </div>
-            ))}
-          </div>
-          <div>{loading && <LoadingIndicator />}</div>
-          <div>
-            {showModal && (
-              <NewsModal data={modalData} setShowModal={setShowModal} />
-            )}
-          </div>
+      <section className={styles.wrapper}>
+        <div className={styles.newsfeed}>
+          {data.map((element, index) => (
+            <>
+              {data.length !== index + 1 && (
+                <div key={index}>
+                  <NewsCard
+                    index={index}
+                    url={element.link}
+                    media={element.media}
+                    title={element.title}
+                    excerpt={element.excerpt}
+                    setShowModal={setShowModal}
+                    setModalIndex={setModalIndex}
+                  />
+                </div>
+              )}
+              {data.length === index + 1 && (
+                <div ref={lastNewsElementRef} key={index}>
+                  <NewsCard
+                    index={index}
+                    url={element.link}
+                    media={element.media}
+                    title={element.title}
+                    excerpt={element.excerpt}
+                    setShowModal={setShowModal}
+                    setModalIndex={setModalIndex}
+                  />
+                </div>
+              )}
+              {index === 5 && <GetSpacePhotos />}
+              {index === 9 && (
+                <div className={styles.api_space}> Space for API 2</div>
+              )}
+              {index === 13 && (
+                <div className={styles.api_space}> Space for API 2</div>
+              )}
+            </>
+          ))}
+        </div>
+        <div>{loading && <LoadingIndicator />}</div>
+        <div>
+          {showModal && (
+            <NewsModal data={modalData} setShowModal={setShowModal} />
+          )}
         </div>
       </section>
     </div>

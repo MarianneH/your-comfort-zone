@@ -6,11 +6,11 @@ import styles from "./home.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.wrapper}>
+    <>
       {/* <Link to="/">Home</Link>
         <Link to="/about-us">About Us</Link> */}
       <WelcomeSection />
       <NewsSection />
-    </div>
+    </>
   );
 }
