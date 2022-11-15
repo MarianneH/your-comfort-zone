@@ -13,7 +13,7 @@ function NewsModal({ data, setShowModal }) {
   }, [data]);
 
   return (
-    <div className={styles.modal_container} onClick={handleClick} >
+    <div className={styles.modal_container} onClick={handleClick}>
       <div className={styles.modal}>
         <div className={styles.modal_header}>
           <div className={styles.header_text}>In focus</div>

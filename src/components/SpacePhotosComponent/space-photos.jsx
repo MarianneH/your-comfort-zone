@@ -28,26 +28,28 @@ export default function GetSpacePhotos() {
   if (!photoData) return <div />;
 
   return (
-    <>
-      <div className={styles.topBox}></div>
+    <div className={styles.space_container}>
+      <div className={styles.spacer}></div>
       <div className={styles.spacePhotoContainer}>
         <img
           src={photoData.url}
           alt={photoData.title}
           className={styles.spacePhotoImage}
         />
-        <h1 className={styles.spacePhotoTitle} id="space-section">
-          {photoData.title}
-        </h1>
-        <div
-          href="#space-section"
-          className={styles.spacePhotoMusic}
-          onClick={() => togglePlay(setIsPlaying, isPlaying, audio)}
-        >
-          {isPlaying ? <img src={stop} /> : <img src={play} />}
+        <div className={styles.bottom_container}>
+          <h1 className={styles.spacePhotoTitle} id="space-section">
+            {photoData.title}
+          </h1>
+          <div
+            href="#space-section"
+            className={styles.spacePhotoMusic}
+            onClick={() => togglePlay(setIsPlaying, isPlaying, audio)}
+          >
+            {isPlaying ? <img src={stop} /> : <img src={play} />}
+          </div>
         </div>
       </div>
-      <div className={styles.downBox}></div>
-    </>
+      <div className={styles.spacer}></div>
+    </div>
   );
 }
