@@ -29,7 +29,7 @@ function Manifest() {
   };
 
   return (
-    <div className={styles.manifest_container}>
+    <div className={styles.manifest_container} id="dalle">
       <div className={styles.spacer}></div>
       <div className={styles.top_container}>
         <div>{loading && <LoadingIndicator />}</div>
@@ -41,6 +41,7 @@ function Manifest() {
           className={styles.manifest_input}
           placeholder="e.g: Amazonas jungle painted by Dürer"
           onChange={(e) => setUserPrompt(e.target.value)}
+
         />
         <button onClick={() => generateImage()}>Manifest</button>
         <div className={styles.manifest_image_container}>

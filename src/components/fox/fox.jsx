@@ -15,7 +15,7 @@ function Fox() {
   };
 
   return (
-    <div className={styles.foxContainer}>
+    <div className={styles.foxContainer} id="fox">
       <div className={styles.spacer}></div>
       <div className={styles.fox}>
         <img src={fox.image} onClick={getFox} title={"Click me for more fox"} />
