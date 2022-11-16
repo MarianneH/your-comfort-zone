@@ -1,0 +1,15 @@
+.line {
+  background-color: var(--secondary-accent);
+  color: var(--secondary-accent);
+  border-color: var(--secondary-accent);
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.team_name {
+  margin: 16px auto;
+}
+
+.team_content {
+  margin: 16px auto;
+}
