@@ -1,0 +1,31 @@
+.parent_container {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  background-color: var(--opace-background);
+  width: 100vw;
+  height: 100vh;
+  padding-top: 36px;
+}
+.image {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.headline {
+  margin-bottom: 36px;
+}
+.about_us {
+  text-align: center;
+  color: var(--secondary-accent);
+  font-family: var(--main-font);
+}
+@media screen and (min-width: 700px) {
+  .container {
+    width: 70vw;
+  }
+}

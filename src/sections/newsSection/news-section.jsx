@@ -116,7 +116,7 @@ function NewsSection() {
                 </div>
               )}
               {index === 5 && <GetSpacePhotos />}
-              {index === 9 && <Manifest />}
+              {index === 9 && <Fox />}
               {index === 13 && (
                 <div className={styles.api_space}> Space for API 2</div>
               )}
