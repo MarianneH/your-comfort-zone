@@ -1,0 +1,14 @@
+.navigation {
+  font-family: var(--main-font);
+  width: 100vw;
+  position: fixed;
+  bottom: 0%;
+  line-height: 2em;
+  text-align: center;
+  z-index: 2;
+  background-color: var(--primary-accent);
+  padding: 16px;
+}
+li {
+  list-style-type: none;
+}
