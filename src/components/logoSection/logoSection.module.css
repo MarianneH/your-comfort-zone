@@ -29,3 +29,11 @@
     left: 27%;
   }
 }
+
+@media (min-width: 1200px) {
+  .image img {
+    width: 30vw;
+    top: 25%;
+    left: 37%;
+  }
+}
