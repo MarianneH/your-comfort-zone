@@ -28,7 +28,7 @@ export default function GetSpacePhotos() {
   if (!photoData) return <div />;
 
   return (
-    <div className={styles.space_container}>
+    <div className={styles.space_container} id="space">
       <div className={styles.spacer}></div>
       <div className={styles.spacePhotoContainer}>
         <img
