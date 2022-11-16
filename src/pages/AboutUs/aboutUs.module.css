@@ -1,0 +1,28 @@
+.image {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+.container {
+    display: flex;
+    background-color: var(--primary-accent);
+    width: 100%;
+    height: 100%;
+    padding: 100px 150px 600px 150px;
+}
+
+.about_us {
+  text-align: center;  
+  color: var(--secondary-accent);
+  font-family: var(--accent-font)
+}
+
+hr {
+    background-color: var(--secondary-accent);
+    color: var(--secondary-accent);
+    border-color: var(--secondary-accent);
+}

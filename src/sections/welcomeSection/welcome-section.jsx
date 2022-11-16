@@ -1,6 +1,6 @@
 import styles from "./welcomeSection.module.css";
 import FadingHeadlines from "../../components/fadingHeadlines/fading-headlines";
-import background from "../../assets/welcome-image4.jpeg";
+import background from "../../assets/welcome-image.jpeg";
 import LogoSection from "../../components/logoSection/logo-section";
 import { Parallax } from "react-scroll-parallax";
 
