@@ -4,6 +4,7 @@ import "../../root.css";
 import SearchBubbles from "../../components/searchBubbles/search-bubbles";
 import NewsCard from "../../components/newsCard/news-card";
 import GetSpacePhotos from "../../components/SpacePhotosComponent/space-photos";
+import Manifest from "../../components/manifestComponent/manifest";
 import LoadingIndicator from "../../components/loadingIndicator/loading-indicator";
 import NewsModal from "../../components/newsModal/news-modal";
 import useFetch from "../../hooks/useFetch";
@@ -114,9 +115,7 @@ function NewsSection() {
                 </div>
               )}
               {index === 5 && <GetSpacePhotos />}
-              {index === 9 && (
-                <div className={styles.api_space}> Space for API 2</div>
-              )}
+              {index === 9 && <Manifest />}
               {index === 13 && (
                 <div className={styles.api_space}> Space for API 2</div>
               )}
