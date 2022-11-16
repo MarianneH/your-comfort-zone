@@ -8,6 +8,7 @@ import LoadingIndicator from "../../components/loadingIndicator/loading-indicato
 import NewsModal from "../../components/newsModal/news-modal";
 import useFetch from "../../hooks/useFetch";
 import removeKeysOfObject from "../../hooks/remove-keys-of-object";
+import Fox from "../../components/fox/fox";
 
 function NewsSection() {
   const [data, setData] = useState([]);
@@ -114,9 +115,7 @@ function NewsSection() {
                 </div>
               )}
               {index === 5 && <GetSpacePhotos />}
-              {index === 9 && (
-                <div className={styles.api_space}> Space for API 2</div>
-              )}
+              {index === 9 && <Fox />}
               {index === 13 && (
                 <div className={styles.api_space}> Space for API 2</div>
               )}
