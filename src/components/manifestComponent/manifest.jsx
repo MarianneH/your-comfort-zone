@@ -30,27 +30,33 @@ function Manifest() {
 
   return (
     <div className={styles.manifest_container} id="dalle">
-      <div>{loading && <LoadingIndicator />}</div>
-      <p className={styles.manifest_title}>
-        Manifest your positive thoughts into an image
-      </p>
+      <div className={styles.spacer}></div>
+      <div className={styles.top_container}>
+        <div>{loading && <LoadingIndicator />}</div>
+        <p className={styles.manifest_title}>
+          Manifest your positive thoughts into an AI Generated Image
+        </p>
 
-      <input
-        className={styles.manifest_input}
-        placeholder="e.g: Amazonas jungle painted by Dürer"
-        onChange={(e) => setUserPrompt(e.target.value)}
-      />
-      <button onClick={() => generateImage()}>Manifest</button>
+        <input
+          className={styles.manifest_input}
+          placeholder="e.g: Amazonas jungle painted by Dürer"
+          onChange={(e) => setUserPrompt(e.target.value)}
 
-      {imageUrl ? (
-        <img
-          className={styles.manifest_image}
-          src={imageUrl}
-          alt="AI Generated"
         />
-      ) : (
-        <></>
-      )}
+        <button onClick={() => generateImage()}>Manifest</button>
+        <div className={styles.manifest_image_container}>
+          {imageUrl ? (
+            <img
+              className={styles.manifest_image}
+              src={imageUrl}
+              alt="AI Generated"
+            />
+          ) : (
+            <></>
+          )}{" "}
+        </div>
+      </div>
+      <div className={styles.spacer}></div>
     </div>
   );
 }
