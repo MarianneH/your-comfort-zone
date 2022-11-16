@@ -8,7 +8,7 @@
   display: block;
   margin: 0 auto;
   background-color: #edecec;
-  border-top: 2px solid #f86624;
+  border-top: 2px solid var(--primary-accent);
 }
 
 .spacePhotoContainer {

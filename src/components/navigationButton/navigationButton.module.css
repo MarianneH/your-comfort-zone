@@ -16,7 +16,7 @@
 }
 
 @media screen and (min-width: 700px) {
-  .navigation {
+  .navigation_button {
     left: 90vw;
   }
 }

@@ -8,7 +8,29 @@
   z-index: 2;
   background-color: var(--primary-accent);
   padding: 16px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  transition: 1s ease-in-out;
+  /* transform: translateY(120%); */
 }
+
+/* .show {
+  transform: translateY(0%);
+} */
 li {
   list-style-type: none;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  color: black;
+}
+hr {
+  margin: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.back_to_top {
+  cursor: pointer;
 }
