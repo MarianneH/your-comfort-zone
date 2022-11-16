@@ -29,7 +29,7 @@ function Manifest() {
   };
 
   return (
-    <div className={styles.manifest_container}>
+    <div className={styles.manifest_container} id="dalle">
       <div>{loading && <LoadingIndicator />}</div>
       <p className={styles.manifest_title}>
         Manifest your positive thoughts into an image
