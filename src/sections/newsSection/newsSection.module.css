@@ -8,13 +8,35 @@
   );
 }
 
+section {
+  width: 100vw;
+  background-color: #edecec;
+}
+
+.wrapper {
+  padding-top: 25px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
 .newsfeed {
-  width: 90%;
-  margin: 16px auto;
+  background-color: #edecec;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap: 25px;
+}
+
+@media screen and (min-width: 700px) {
+  .newsfeed {
+    gap: 52px;
+  }
+
+  .wrapper {
+    padding-top: 52px;
+  }
 }
 
 .api_space {

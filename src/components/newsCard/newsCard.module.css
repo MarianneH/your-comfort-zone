@@ -1,14 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Work+Sans&display=swap");
+
 .news_item {
-  margin: 16px 0;
-  color: inherit;
   text-decoration: inherit;
+  position: relative;
+  display: block;
+  width: 338px;
+  height: 400px;
+  background-color: white;
 }
+
+.news_hover {
+  opacity: 0;
+  position: absolute;
+  margin-top: 102px;
+  margin-left: 170px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.5s ease;
+  text-align: center;
+}
+
+.news_hover_text {
+  font-family: "Work Sans", sans-serif;
+  color: #f86624;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 33.9px;
+}
+
+.news_item:hover .news_hover {
+  opacity: 1;
+}
+
 .news_images {
-  margin: 0 auto;
-  width: 100%;
+  object-fit: cover;
+  height: 225px;
+  width: 338px;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.news_images:hover {
+  opacity: 0.3;
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  backface-visibility: hidden;
+}
+
+.news_title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: black;
+  font-style: normal;
+  letter-spacing: 2px;
+  line-height: 20px;
+  margin-top: 19px;
+  margin-left: 25px;
+  width: 287px;
+  height: 41px;
+  overflow: hidden;
 }
 
 .news_excerpt {
-  line-height: 1.5em;
-  color: var(--primary-accent);
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  font-style: normal;
+  letter-spacing: 4px;
+  line-height: 18px;
+  margin-top: 12px;
+  margin-left: 25px;
+  width: 289px;
+  height: 72px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 700px) {
+  .news_item {
+    width: 480px;
+    height: 475px;
+    overflow-x: hidden;
+  }
+
+  .news_hover {
+    margin-top: 151px;
+    margin-left: 241px;
+  }
+
+  .news_images {
+    height: 320px;
+    width: 480px;
+  }
+
+  .news_title {
+    margin-top: 20px;
+    width: 430px;
+    height: 42px;
+  }
+
+  .news_excerpt {
+    margin-top: 12px;
+    margin-left: 25px;
+    width: 430px;
+    height: 55px;
+  }
 }
