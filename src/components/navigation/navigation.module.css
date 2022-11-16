@@ -12,7 +12,10 @@
   border-top-right-radius: 15px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   transition: 1s ease-in-out;
+
 }
+
+
 
 .navigation ul li {
   list-style-type: none;
