@@ -88,7 +88,7 @@ function NewsSection() {
       <section className={styles.wrapper}>
         <div className={styles.newsfeed}>
           {data.map((element, index) => (
-            <>
+            <React.Fragment key={index}>
               {data.length !== index + 1 && (
                 <div key={index}>
                   <NewsCard
@@ -117,10 +117,8 @@ function NewsSection() {
               )}
               {index === 5 && <GetSpacePhotos />}
               {index === 9 && <Fox />}
-              {index === 13 && (
-                <div className={styles.api_space}> Space for API 2</div>
-              )}
-            </>
+              {index === 13 && <Manifest />}
+            </React.Fragment>
           ))}
         </div>
         <div>{loading && <LoadingIndicator />}</div>

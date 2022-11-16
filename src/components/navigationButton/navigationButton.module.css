@@ -13,6 +13,7 @@
   justify-content: center;
   color: white;
   font-family: var(--main-font);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 700px) {
