@@ -1,0 +1,30 @@
+.welcome_section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+}
+
+.image {
+  position: absolute;
+  width: 100vw;
+  height: 129%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+}
+.image img {
+  height: 120%;
+}
+.content_container {
+  display: flex;
+  flex-direction: column;
+}
+.logo_and_brand {
+  height: 55vh;
+  font-size: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+}

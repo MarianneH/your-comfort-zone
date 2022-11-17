@@ -1,0 +1,12 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  padding: 2em;
+  color: rgba(0, 0, 0, 0.6);
+  height: 20vh;
+}
+.loading div {
+  margin: 16px;
+}

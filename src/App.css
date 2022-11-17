@@ -4,6 +4,33 @@
   box-sizing: border-box;
 }
 body {
-  display: flex;
-  justify-content: center;
+  width: 100vw;
+}
+.sub_navigation {
+  font-family: var(--main-font);
+  width: 100vw;
+  position: fixed;
+  bottom: 0%;
+  line-height: 2em;
+  text-align: center;
+  z-index: 2;
+  background-color: #af4919;
+  padding: 16px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  transition: 0.4s ease-in-out;
+  transform: translateY(120%);
+  list-style-type: none;
+}
+.sub_navigation ul li {
+  list-style-type: none;
+}
+.show {
+  transform: translateY(0%);
+}
+.sub_navigation a:-webkit-any-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--background-color);
 }

@@ -1,0 +1,23 @@
+.navigation_button {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 90vh;
+  left: 44vw;
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  background-color: var(--primary-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--main-font);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+  .navigation_button {
+    left: 90vw;
+  }
+}

@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Work+Sans&display=swap");
+
+.space_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  background-color: #edecec;
+  border-top: 2px solid var(--primary-accent);
+}
+
+.spacePhotoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #bfbebe;
+  width: 100vw;
+  height: 60vh;
+  margin: 52px auto;
+}
+
+.spacePhotoImage {
+  object-fit: cover;
+  height: 70%;
+  width: 80%;
+}
+.bottom_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1em;
+}
+
+.spacePhotoTitle {
+  font-family: var(--main-font);
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  font-style: normal;
+  letter-spacing: 1.5px;
+  line-height: 16.1px;
+}
+
+.spacePhotoMusic img {
+  height: 20px;
+  width: 20px;
+}
+
+.spacePhotoMusic img:hover {
+  filter: invert(46%) sepia(76%) saturate(2137%) hue-rotate(347deg)
+    brightness(100%) contrast(95%);
+}
+
+@media screen and (min-width: 700px) {
+  .spacePhotoContainer {
+    height: 70vh;
+    width: 80vw;
+  }
+}
