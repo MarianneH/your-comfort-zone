@@ -1,10 +1,35 @@
 .search_bubbles {
+  position: sticky;
+  top: 9px;
   display: flex;
   justify-content: space-around;
   margin: 16px 0;
+  z-index: 1;
 }
 
 .bubble img {
-  width: 40px;
+  width: 55px;
   display: inline;
+  cursor: pointer;
+}
+
+.blur_container {
+  margin-top: 22.5px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.blur {
+  align-self: center;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 75px;
+  width: 100%;
+  z-index: -1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }

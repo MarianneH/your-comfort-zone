@@ -32,6 +32,9 @@ function SearchBubbles({ setQuery, setPageNumber, setData, query }) {
           <img name={element.name} src={element.src} alt={element.name} />
         </div>
       ))}
+      <div className={styles.blur_container}>
+        <div className={styles.blur}></div>
+      </div>
     </div>
   );
 }
