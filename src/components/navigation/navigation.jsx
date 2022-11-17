@@ -39,7 +39,7 @@ function Navigation({ setShowNav }) {
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={handleClickHome}>Play Around</NavLink>
+            <NavLink onClick={handleClickHome}>Play Around &#8674;</NavLink>
           </li>
           <li>
             <NavLink
@@ -71,17 +71,17 @@ function Navigation({ setShowNav }) {
           </li>
           <li>
             <NavHashLink to="/#space" onClick={handleSubNavClick}>
-              Nasa Image of the Day
+              <span className={styles.play}>Explore with</span> NASA
             </NavHashLink>
           </li>
           <li>
             <NavHashLink to="/#fox" onClick={handleSubNavClick}>
-              Play with Foxes
+              <span className={styles.play}>Have fun with</span> Foxes
             </NavHashLink>
           </li>
           <li>
             <NavHashLink to="/#dalle" onClick={handleSubNavClick}>
-              Creative with DALL-E2
+              <span className={styles.play}>Creative with</span> DALL-E2
             </NavHashLink>
           </li>
         </ul>

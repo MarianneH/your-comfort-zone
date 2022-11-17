@@ -48,3 +48,6 @@ hr {
 .show {
   transform: translateY(0%);
 }
+.play {
+  font-style: italic;
+}

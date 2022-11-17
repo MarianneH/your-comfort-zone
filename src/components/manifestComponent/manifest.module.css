@@ -21,7 +21,6 @@
   justify-content: center;
   background-color: #bfbebe;
   width: 100vw;
-  height: 60vh;
   margin: 52px auto;
 }
 
@@ -79,7 +78,7 @@ button:hover {
 
 .manifest_image {
   object-fit: cover;
-  height: 300px;
+  height: 100%;
   margin: 26px;
 }
 
