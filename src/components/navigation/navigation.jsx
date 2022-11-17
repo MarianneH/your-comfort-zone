@@ -81,7 +81,7 @@ function Navigation({ setShowNav }) {
           </li>
           <li>
             <HashLink to="/#dalle" onClick={handleSubNavClick}>
-              <span className={styles.play}>Creative with</span> DALL-E2
+              <span className={styles.play}>Create with</span> DALL-E2
             </HashLink>
           </li>
         </ul>
