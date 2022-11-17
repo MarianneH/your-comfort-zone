@@ -19,7 +19,6 @@
 }
 a:-webkit-any-link {
   text-decoration: none;
-  color: white;
   cursor: pointer;
   color: black;
 }
@@ -48,4 +47,7 @@ hr {
 }
 .show {
   transform: translateY(0%);
+}
+.play {
+  font-style: italic;
 }

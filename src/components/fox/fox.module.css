@@ -17,6 +17,7 @@
 
 .fox img {
   height: 100%;
+  max-height: 70vh;
   width: 100%;
 }
 

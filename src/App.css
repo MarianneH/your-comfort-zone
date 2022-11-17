@@ -14,7 +14,7 @@ body {
   line-height: 2em;
   text-align: center;
   z-index: 2;
-  background-color: var(--primary-accent);
+  background-color: #af4919;
   padding: 16px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -28,4 +28,9 @@ body {
 }
 .show {
   transform: translateY(0%);
+}
+.sub_navigation a:-webkit-any-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--background-color);
 }
