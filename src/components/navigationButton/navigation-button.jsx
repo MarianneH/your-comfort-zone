@@ -5,9 +5,8 @@ import styles from "./navigationButton.module.css";
 function NavigationButton() {
   const [showNav, setShowNav] = useState(false);
   function handleClick() {
-    setShowNav(true);
+    setShowNav((prevState) => true);
   }
-  //   console.log(showNav);
   return (
     <div className={styles.nav_container}>
       {showNav && <Navigation setShowNav={setShowNav} />}
