@@ -56,6 +56,9 @@ function NewsSection() {
     }
   }, [response]);
 
+  useEffect(() => {
+    window.history.pushState("", "", `/#${query}`);
+  }, [query]);
   //to display the correct data in the modal
   useEffect(() => {
     setModalData((prevData) => data[modalIndex]);
@@ -78,7 +81,7 @@ function NewsSection() {
   );
 
   return (
-    <div className={styles.news_section}>
+    <div className={styles.news_section} id="news_section">
       <SearchBubbles
         setQuery={setQuery}
         setPageNumber={setPageNumber}
