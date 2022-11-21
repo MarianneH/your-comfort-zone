@@ -9,7 +9,7 @@ function useFetch(url, key, setLoading) {
   const [errorX, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
+    setLoading((prevData) => true);
     axios
       .get(url, {
         headers: {
@@ -17,8 +17,8 @@ function useFetch(url, key, setLoading) {
         },
       })
       .then((response) => {
-        setResponse(response.data);
-        setLoading(false);
+        setResponse((prevData) => response.data);
+        setLoading((prevData) => false);
       })
       .catch((e) => {
         console.log("ERROR MESSAGE : " + e);

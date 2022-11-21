@@ -49,8 +49,6 @@ function FadingHeadlines({ wording }) {
       }}
     >
       <div className={styles.breathe_section}>
-        {" "}
-        {/* ref={ref} */}
         <div className={styles.breathe_in_out} ref={section}>
           {wording}
         </div>

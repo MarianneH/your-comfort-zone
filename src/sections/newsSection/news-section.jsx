@@ -52,13 +52,16 @@ function NewsSection() {
           keysToRemove
         );
       });
-      setHasMore(response.total_hits >= data.length + 20);
+      setHasMore((prevData) => response.total_hits >= data.length + 20);
     }
   }, [response]);
 
+  useEffect(() => {
+    window.history.pushState("", "", `/#${query}`);
+  }, [query]);
   //to display the correct data in the modal
   useEffect(() => {
-    setModalData(data[modalIndex]);
+    setModalData((prevData) => data[modalIndex]);
   }, [showModal]);
 
   //implementation of endless scrolling
@@ -78,7 +81,7 @@ function NewsSection() {
   );
 
   return (
-    <div className={styles.news_section}>
+    <div className={styles.news_section} id="news_section">
       <SearchBubbles
         setQuery={setQuery}
         setPageNumber={setPageNumber}
