@@ -9,9 +9,9 @@ We are decorating the news with additional comforting elements. Like a look into
 # Packages used
 * axios, react-router-dom
 
+* React Router Dom: https://www.npmjs.com/package/react-router-dom/v/5.2.0
 * React Scroll Parallax: https://react-scroll-parallax.damnthat.tv/docs/intro
-
- 
+* React Router Hash: https://www.npmjs.com/package/react-router-hash-link 
 
 
 
