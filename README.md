@@ -7,7 +7,7 @@ The aim of the project is to create a website that allows users to find a place 
 The news are accompanied by different fun elements, which are pulled in using more APIs. These aim to support the relaxing characteristic of our project. 
 
 # Contributors 💫
-Georg Weber | Hendra Widjaya | Luis Felipe Urdapilleta | Marianne Helbig |
+Georg | Hendra | LuisFe | Marianne |
 --- | --- | --- | --- |
 https://github.com/GeorgBerlin | https://github.com/hendrawidjaya | https://github.com/luisfentastic | https://github.com/MarianneH |
 
