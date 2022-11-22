@@ -56,9 +56,6 @@ function NewsSection() {
     }
   }, [response]);
 
-  useEffect(() => {
-    window.history.pushState("", "", `/#${query}`);
-  }, [query]);
   //to display the correct data in the modal
   useEffect(() => {
     setModalData((prevData) => data[modalIndex]);
