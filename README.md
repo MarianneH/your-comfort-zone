@@ -1,10 +1,15 @@
-# your-comfort-zone
+# Your Comfort Zone
 
 This project is done within the Wild Code School 20 week Full Stack Web Development Training Programme.
 
 The aim of the project is to create a website that allows users to find a place to get informed, but without the overly negative part of the news. Basically a digital space to get the news without the blues. Therefore we want to filter the news from the Guardian (through Newscatcher API https://newscatcherapi.com/ ) to only present positive news.
 
 The news are accompanied by different fun elements, which are pulled in using more APIs. These aim to support the relaxing characteristic of our project. 
+
+# Contributors 💫
+Georg Weber | Hendra Widjaya | Luis Felipe Urdapilleta | Marianne Helbig |
+--- | --- | --- | --- |
+https://github.com/GeorgBerlin | https://github.com/hendrawidjaya | https://github.com/luisfentastic | https://github.com/MarianneH |
 
 # Demo 
 Link to the website through Netlify: 
@@ -24,9 +29,8 @@ Link to the website through Netlify:
 
 # Installation
 1. clone repository 
-2. run ```bash
-npm install
-```
+2. run ```npm install```
+3. replace .env.example file with .env and include your own API keys (for Newscatcher, NASA and openAI)
 
 # Build with
 * React
