@@ -6,17 +6,24 @@ The aim of the project is to create a website that allows users to find a place 
 
 The news are accompanied by different fun elements, which are pulled in using more APIs. These aim to support the relaxing characteristic of our project. 
 
+# Demo 
+Link to the website through Netlify: 
+
 # Feature list: 
 * Designed welcome section using parallax scroll elements
-* fitlered newssection & topic selection buttons to switch topics - requests are going to newscatcherAPI
+* fitlered newssection showing news articles 
+* topic selection buttons to switch topics of the displayed news 
 * news open in Modal on click for more information
 * infinite scrolling of news (following https://www.youtube.com/watch?v=NZKUirTtxcg)
 * Multi-page integration using React Router Dom 
-* Nasas photo of the day integration, every day there is a new image
-* Fox photo integration, on click it changed
-* Dall-E2 integration, on input it generates an image
+* Nasas photo of the day integration, every day there is a new image coming from the NASA API
+* Fox photo integration, on click it changes using the Fox API
+* Dall-E2 integration, on input it generates an image using the openAPI
 * navigation - links to Home, About using NavLink (React Router Dom) - links to Nasa, Fox and Dall-E2 using HashLink (React Router Hash)
 * About-us page
+
+# Build with
+* React
 
 # APIs used
 * Newscatcher API - Search multi-language worldwide news articles published online with NewsCatcher's News API - https://newscatcherapi.com/ 
@@ -28,8 +35,8 @@ The news are accompanied by different fun elements, which are pulled in using mo
 * axios: https://www.npmjs.com/package/axios
 * openAI: https://openai.com/api/
 * React Router Dom: https://www.npmjs.com/package/react-router-dom/v/5.2.0
-* React Scroll Parallax: https://react-scroll-parallax.damnthat.tv/docs/intro
 * React Router Hash: https://www.npmjs.com/package/react-router-hash-link 
+* React Scroll Parallax: https://react-scroll-parallax.damnthat.tv/docs/intro
 
 # Videos that helped building the page 
 Infinite Scrolling With React - Tutorial - by Web Dev Simplified - https://www.youtube.com/watch?v=NZKUirTtxcg 
