@@ -79,6 +79,7 @@ function NewsSection() {
 
   return (
     <div className={styles.news_section}>
+      <h1>Comfort Zone</h1>
       <SearchBubbles
         setQuery={setQuery}
         setPageNumber={setPageNumber}
