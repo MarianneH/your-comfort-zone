@@ -22,24 +22,31 @@ Link to the website through Netlify:
 * navigation - links to Home, About using NavLink (React Router Dom) - links to Nasa, Fox and Dall-E2 using HashLink (React Router Hash)
 * About-us page
 
+# Installation
+1. clone repository 
+2. run ```bash
+npm install
+```
+
 # Build with
 * React
 
-# APIs used
+## APIs used
 * Newscatcher API - Search multi-language worldwide news articles published online with NewsCatcher's News API - https://newscatcherapi.com/ 
 * NASA API - Astronomy Picture of The Day. One of the most popular API from NASA that shows different space pictures every day. - https://apod.nasa.gov/apod/astropix.html
 * Fox API - The RandomFox API provides access to random images of a fox or group of foxes. - https://randomfox.ca
 * DALL·E2 API - Starting November 2022, developers are now able to build apps with the AI Image Creator DALL·E - https://openai.com/dall-e-2
 
-# Packages used
+## Packages used
 * axios: https://www.npmjs.com/package/axios
 * openAI: https://openai.com/api/
 * React Router Dom: https://www.npmjs.com/package/react-router-dom/v/5.2.0
 * React Router Hash: https://www.npmjs.com/package/react-router-hash-link 
 * React Scroll Parallax: https://react-scroll-parallax.damnthat.tv/docs/intro
 
-# Videos that helped building the page 
+# Acknowledgments
+## Videos that helped building the page 
 Infinite Scrolling With React - Tutorial - by Web Dev Simplified - https://www.youtube.com/watch?v=NZKUirTtxcg 
 
-# Other Ressources
+## Other Ressources
 * loading indecator from: http://ajaxloadingimages.net/svg
