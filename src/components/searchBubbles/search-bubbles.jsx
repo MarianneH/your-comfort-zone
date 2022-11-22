@@ -19,7 +19,7 @@ function SearchBubbles({ setQuery, setPageNumber, setData, query }) {
     <div className={styles.search_bubbles}>
       {bubblesContent.map((element, index) => (
         <HashLink
-          to="/#news_section"
+          to={`/#${element.name}`}
           key={index}
           className={styles.bubble}
           name={element.name}
