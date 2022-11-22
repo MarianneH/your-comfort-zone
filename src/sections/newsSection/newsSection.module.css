@@ -8,12 +8,26 @@
   );
 }
 
+h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--primary-accent);
+  min-height: 29px;
+  font-style: bold;
+  letter-spacing: 0.16px;
+  line-height: 36.2px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
 section {
   width: 100vw;
   background-color: #edecec;
 }
 
 .wrapper {
+  padding-bottom: 25px;
   padding-top: 25px;
   margin: 0 auto;
   max-width: 100%;
@@ -36,14 +50,6 @@ section {
 
   .wrapper {
     padding-top: 52px;
+    padding-bottom: 52px;
   }
-}
-
-.api_space {
-  height: 20vh;
-  font-weight: bold;
-  background-color: paleturquoise;
-  width: 100%;
-  text-align: center;
-  padding-top: 20px;
 }
