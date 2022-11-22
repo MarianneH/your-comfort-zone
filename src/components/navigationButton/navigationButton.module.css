@@ -1,7 +1,7 @@
 .navigation_button {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   position: fixed;
-  top: 90vh;
+  top: 90%;
   left: 44vw;
   height: 50px;
   width: 50px;
