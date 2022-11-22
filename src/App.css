@@ -13,7 +13,7 @@ body {
   bottom: 0%;
   line-height: 2em;
   text-align: center;
-  z-index: 2;
+  z-index: 4;
   background-color: #af4919;
   padding: 16px;
   border-top-left-radius: 15px;

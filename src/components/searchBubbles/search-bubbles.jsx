@@ -4,7 +4,6 @@ import yoga from "../../assets/yoga.png";
 import food from "../../assets/food.png";
 import sport from "../../assets/sports.png";
 import styles from "./searchBubbles.module.css";
-import { useRef } from "react";
 import { HashLink } from "react-router-hash-link";
 
 const bubblesContent = [

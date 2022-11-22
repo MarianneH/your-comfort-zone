@@ -5,7 +5,7 @@
   bottom: 0%;
   line-height: 2em;
   text-align: center;
-  z-index: 2;
+  z-index: 3;
   background-color: var(--primary-accent);
   padding: 16px;
   border-top-left-radius: 15px;
@@ -13,7 +13,6 @@
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   transition: 1s ease-in-out;
 }
-
 .navigation ul li {
   list-style-type: none;
 }
@@ -36,7 +35,7 @@ hr {
   bottom: 0%;
   line-height: 2em;
   text-align: center;
-  z-index: 2;
+  z-index: 4;
   background-color: var(--primary-accent);
   padding: 16px;
   border-top-left-radius: 15px;
@@ -44,9 +43,6 @@ hr {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   transition: 1s ease-in-out;
   transform: translateY(120%);
-}
-.show {
-  transform: translateY(0%);
 }
 .play {
   font-style: italic;
