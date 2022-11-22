@@ -1,17 +1,21 @@
+import science from "../../assets/science.png";
+import flowers from "../../assets/flowers.png";
 import music from "../../assets/music.png";
 import books from "../../assets/books.png";
 import yoga from "../../assets/yoga.png";
 import food from "../../assets/food.png";
-import sport from "../../assets/sports.png";
+import sports from "../../assets/sports.png";
 import styles from "./searchBubbles.module.css";
 import { HashLink } from "react-router-hash-link";
 
 const bubblesContent = [
+  { name: "science", src: science },
+  { name: "flowers", src: flowers },
   { name: "music", src: music },
-  { name: "books", src: books },
+  { name: "sports", src: sports },
   { name: "food", src: food },
+  { name: "books", src: books },
   { name: "yoga", src: yoga },
-  { name: "sport", src: sport },
 ];
 
 function SearchBubbles({ setQuery, setPageNumber, setData, query }) {

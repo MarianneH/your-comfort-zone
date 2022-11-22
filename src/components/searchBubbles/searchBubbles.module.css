@@ -13,6 +13,20 @@
   cursor: pointer;
 }
 
+.bubble[name]:hover:after {
+  content: attr(name);
+  position: absolute;
+  top: 100%;
+  margin-left: -50px;
+  color: var(--primary-accent);
+  font-family: var(--main-font);
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1.5px;
+  line-height: 16.1px;
+}
+
 .blur_container {
   margin-top: 22.5px;
   position: absolute;
