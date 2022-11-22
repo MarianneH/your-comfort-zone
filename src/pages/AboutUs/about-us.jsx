@@ -5,10 +5,26 @@ import TeamMembers from "../../components/teamMembers/team-members";
 
 export default function AboutUs() {
   const members = [
-    { name: "Marianne Helbig", content: "--Content--" },
-    { name: "Luis Felipe Urdapilleta", content: "--Content--" },
-    { name: "Georg Weber", content: "--Content--" },
-    { name: "Hendra Widjaya", content: "--Content--" },
+    {
+      name: "Marianne Helbig",
+      content: "--Content--",
+      github: "https://github.com/MarianneH",
+    },
+    {
+      name: "Luis Felipe Urdapilleta",
+      content: "--Content--",
+      github: "https://github.com/ldupas",
+    },
+    {
+      name: "Georg Weber",
+      content: "--Content--",
+      github: "https://github.com/GeorgBerlin",
+    },
+    {
+      name: "Hendra Widjaya",
+      content: "--Content--",
+      github: "https://github.com/hendrawidjaya",
+    },
   ];
   return (
     <div className={styles.parent_container}>
@@ -25,6 +41,7 @@ export default function AboutUs() {
               key={index}
               name={element.name}
               content={element.content}
+              github={element.github}
             />
           ))}
         </div>

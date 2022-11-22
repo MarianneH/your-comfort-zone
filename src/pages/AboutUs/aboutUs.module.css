@@ -5,7 +5,6 @@
 .container {
   background-color: var(--opace-background);
   width: 100vw;
-  height: 100vh;
   padding-top: 36px;
 }
 .image {
