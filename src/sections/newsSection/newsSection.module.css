@@ -1,12 +1,4 @@
-.news_section {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 99%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
+
 
 h1 {
   font-family: "Work Sans", sans-serif;
@@ -20,14 +12,14 @@ h1 {
   margin-bottom: 30px;
 }
 
+
 section {
   width: 100vw;
   background-color: #edecec;
 }
 
 .wrapper {
-  padding-bottom: 25px;
-  padding-top: 25px;
+  padding: 25px 0;
   margin: 0 auto;
   max-width: 100%;
 }
@@ -48,7 +40,6 @@ section {
   }
 
   .wrapper {
-    padding-top: 52px;
-    padding-bottom: 52px;
+    padding: 52px 0;
   }
 }

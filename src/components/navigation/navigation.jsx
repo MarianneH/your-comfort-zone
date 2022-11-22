@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./navigation.module.css";
 import { HashLink } from "react-router-hash-link";
 

@@ -6,6 +6,7 @@ import yoga from "../../assets/yoga.png";
 import food from "../../assets/food.png";
 import sports from "../../assets/sports.png";
 import styles from "./searchBubbles.module.css";
+import { HashLink } from "react-router-hash-link";
 
 const bubblesContent = [
   { name: "science", src: science },
@@ -21,7 +22,8 @@ function SearchBubbles({ setQuery, setPageNumber, setData, query }) {
   return (
     <div className={styles.search_bubbles}>
       {bubblesContent.map((element, index) => (
-        <div
+        <HashLink
+          to={`/#${element.name}`}
           key={index}
           className={styles.bubble}
           name={element.name}
@@ -34,7 +36,7 @@ function SearchBubbles({ setQuery, setPageNumber, setData, query }) {
           }}
         >
           <img name={element.name} src={element.src} alt={element.name} />
-        </div>
+        </HashLink>
       ))}
       <div className={styles.blur_container}>
         <div className={styles.blur}></div>

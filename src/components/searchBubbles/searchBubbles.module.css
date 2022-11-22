@@ -3,8 +3,8 @@
   top: 9px;
   display: flex;
   justify-content: space-around;
-  margin: 16px 0;
   z-index: 1;
+  box-shadow: var(--standard-shadow);
 }
 
 .bubble img {

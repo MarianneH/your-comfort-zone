@@ -3,7 +3,7 @@ import styles from "./newsSection.module.css";
 import "../../root.css";
 import SearchBubbles from "../../components/searchBubbles/search-bubbles";
 import NewsCard from "../../components/newsCard/news-card";
-import GetSpacePhotos from "../../components/SpacePhotosComponent/space-photos";
+import GetSpacePhotos from "../../components/spacePhotosComponent/space-photos";
 import Manifest from "../../components/manifestComponent/manifest";
 import LoadingIndicator from "../../components/loadingIndicator/loading-indicator";
 import NewsModal from "../../components/newsModal/news-modal";
@@ -52,13 +52,13 @@ function NewsSection() {
           keysToRemove
         );
       });
-      setHasMore(response.total_hits >= data.length + 20);
+      setHasMore((prevData) => response.total_hits >= data.length + 20);
     }
   }, [response]);
 
   //to display the correct data in the modal
   useEffect(() => {
-    setModalData(data[modalIndex]);
+    setModalData((prevData) => data[modalIndex]);
   }, [showModal]);
 
   //implementation of endless scrolling
@@ -78,8 +78,9 @@ function NewsSection() {
   );
 
   return (
-    <div className={styles.news_section}>
-      <h1>Comfort Zone</h1>
+    <div className={styles.news_section} id="news_section">
+    <h1>Comfort Zone</h1>
+
       <SearchBubbles
         setQuery={setQuery}
         setPageNumber={setPageNumber}
