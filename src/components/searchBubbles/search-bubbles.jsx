@@ -1,5 +1,4 @@
 import science from "../../assets/science.png";
-import flowers from "../../assets/flowers.png";
 import music from "../../assets/music.png";
 import books from "../../assets/books.png";
 import yoga from "../../assets/yoga.png";

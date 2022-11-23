@@ -38,7 +38,7 @@ function NewsSection() {
     "clean_url",
   ];
   //fetching the data from an API
-  const { response, errorX } = useFetch(
+  const { response } = useFetch(
     urls.newscatcher,
     process.env.REACT_APP_NEWS_CATCHER_KEY,
     setLoading
@@ -54,11 +54,13 @@ function NewsSection() {
       });
       setHasMore((prevData) => response.total_hits >= data.length + 20);
     }
+    // eslint-disable-next-line
   }, [response]);
 
   //to display the correct data in the modal
   useEffect(() => {
     setModalData((prevData) => data[modalIndex]);
+    // eslint-disable-next-line
   }, [showModal]);
 
   //implementation of endless scrolling
