@@ -3,7 +3,7 @@ import styles from "./newsSection.module.css";
 import "../../root.css";
 import SearchBubbles from "../../components/searchBubbles/search-bubbles";
 import NewsCard from "../../components/newsCard/news-card";
-import GetSpacePhotos from "../../components/spacePhotosComponent/space-photos";
+import GetSpacePhotos from "../../components/SpacePhotosComponent/space-photos";
 import Manifest from "../../components/manifestComponent/manifest";
 import LoadingIndicator from "../../components/loadingIndicator/loading-indicator";
 import NewsModal from "../../components/newsModal/news-modal";
