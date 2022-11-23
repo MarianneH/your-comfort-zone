@@ -4,7 +4,7 @@ exports.handler = async function (event, context) {
   console.log(event);
   console.log(context);
 
-  const targetURL = `https://api.nasa.gov/planetary/apod?api_key=fVqS96C8GmZXNB9Oy4mSHgXQJ0TtQvgTxEQD8yld`;
+  const targetURL = `https://api.nasa.gov/planetary/apod?api_key=`;
 
   try {
     const response = await axios.get(targetURL);

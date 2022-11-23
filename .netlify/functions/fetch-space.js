@@ -2,9 +2,7 @@ const axios = require("axios");
 
 exports.handler = function (event, context, callback) {
   axios
-    .get(
-      "https://api.nasa.gov/planetary/apod?api_key=fVqS96C8GmZXNB9Oy4mSHgXQJ0TtQvgTxEQD8yld"
-    )
+    .get("https://api.nasa.gov/planetary/apod?api_key=")
     .then(function (d) {
       console.log(d); // has data here!!
     })
