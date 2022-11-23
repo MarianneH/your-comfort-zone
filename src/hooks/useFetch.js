@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 // setLoading = has to be a state in parent component using const [loading, setloading] = useState(true)
 function useFetch(url, key, setLoading) {
   const [response, setResponse] = useState(null);
-  const [errorX, setError] = useState(null);
 
   useEffect(() => {
     setLoading((prevData) => true);
@@ -22,11 +21,11 @@ function useFetch(url, key, setLoading) {
       })
       .catch((e) => {
         console.log("ERROR MESSAGE : " + e);
-        setError(e);
       });
+    // eslint-disable-next-line
   }, [url]);
 
-  return { response, errorX };
+  return { response };
 }
 
 export default useFetch;

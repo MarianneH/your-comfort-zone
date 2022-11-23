@@ -45,7 +45,11 @@ export default function GetSpacePhotos() {
             className={styles.spacePhotoMusic}
             onClick={() => togglePlay(setIsPlaying, isPlaying, audio)}
           >
-            {isPlaying ? <img src={stop} /> : <img src={play} />}
+            {isPlaying ? (
+              <img src={stop} alt="stop" />
+            ) : (
+              <img src={play} alt="play" />
+            )}
           </div>
         </div>
       </div>
