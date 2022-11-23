@@ -10,7 +10,6 @@ import { HashLink } from "react-router-hash-link";
 
 const bubblesContent = [
   { name: "science", src: science },
-  { name: "flowers", src: flowers },
   { name: "music", src: music },
   { name: "sports", src: sports },
   { name: "food", src: food },

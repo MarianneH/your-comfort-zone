@@ -27,7 +27,3 @@
   letter-spacing: 1.5px;
   line-height: 16.1px;
 }
-
-.text:hover {
-  color: var(--primary-accent);
-}

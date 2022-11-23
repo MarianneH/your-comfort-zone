@@ -1,5 +1,6 @@
 .modal_container {
   background-color: rgba(0, 0, 0, 0.3);
+  font-family: var(--main-font);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -13,7 +14,6 @@
 }
 .modal {
   background-color: #fff;
-  border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 24px;
   width: 90%;
