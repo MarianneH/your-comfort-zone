@@ -1,12 +1,17 @@
-.news_section {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 99%,
-    rgba(255, 255, 255, 0) 100%
-  );
+
+
+h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--primary-accent);
+  font-style: bolder;
+  letter-spacing: 0.16px;
+  line-height: 36.2px;
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
+
 
 section {
   width: 100vw;
@@ -14,7 +19,7 @@ section {
 }
 
 .wrapper {
-  padding-top: 25px;
+  padding: 25px 0;
   margin: 0 auto;
   max-width: 100%;
 }
@@ -35,15 +40,6 @@ section {
   }
 
   .wrapper {
-    padding-top: 52px;
+    padding: 52px 0;
   }
-}
-
-.api_space {
-  height: 20vh;
-  font-weight: bold;
-  background-color: paleturquoise;
-  width: 100%;
-  text-align: center;
-  padding-top: 20px;
 }

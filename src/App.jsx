@@ -5,7 +5,7 @@ import Home from "./pages/Home/home";
 import AboutUs from "./pages/AboutUs/about-us";
 import { ParallaxProvider } from "react-scroll-parallax";
 import NavigationButton from "./components/navigationButton/navigation-button";
-
+import Footer from "./components/footer/footer";
 function App() {
   return (
     <ParallaxProvider>
@@ -16,6 +16,7 @@ function App() {
             <Route element={<Home />} exact path="/" />
             <Route element={<AboutUs />} path="/about-us" />
           </Routes>
+          <Footer />
         </Router>{" "}
       </div>
     </ParallaxProvider>

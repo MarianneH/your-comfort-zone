@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./navigation.module.css";
-import { NavHashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 
 function Navigation({ setShowNav }) {
   const getActiveLinkStyle = ({ isActive }) => {
@@ -70,19 +70,19 @@ function Navigation({ setShowNav }) {
             </NavLink>
           </li>
           <li>
-            <NavHashLink to="/#space" onClick={handleSubNavClick}>
+            <HashLink to="/#space" onClick={handleSubNavClick}>
               <span className={styles.play}>Explore with</span> NASA
-            </NavHashLink>
+            </HashLink>
           </li>
           <li>
-            <NavHashLink to="/#fox" onClick={handleSubNavClick}>
+            <HashLink to="/#fox" onClick={handleSubNavClick}>
               <span className={styles.play}>Have fun with</span> Foxes
-            </NavHashLink>
+            </HashLink>
           </li>
           <li>
-            <NavHashLink to="/#dalle" onClick={handleSubNavClick}>
-              <span className={styles.play}>Creative with</span> DALL-E2
-            </NavHashLink>
+            <HashLink to="/#dalle" onClick={handleSubNavClick}>
+              <span className={styles.play}>Create with</span> DALL-E2
+            </HashLink>
           </li>
         </ul>
       </nav>
