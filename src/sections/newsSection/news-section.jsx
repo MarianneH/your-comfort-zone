@@ -79,7 +79,7 @@ function NewsSection() {
 
   return (
     <div className={styles.news_section} id="news_section">
-    <h1>Comfort Zone</h1>
+      <h1 className={styles.headline}>Comfort Zone</h1>
 
       <SearchBubbles
         setQuery={setQuery}
