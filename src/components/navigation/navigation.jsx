@@ -25,23 +25,23 @@ function Navigation({ setShowNav }) {
     ref.current.className = "sub_navigation";
     setShowNav((prevState) => false);
   }
-
   return (
     <div>
       <nav className={`${styles.navigation}`}>
         <ul>
-          <li onClick={handleNavigationClick}>
+          <li>
             <NavLink
               style={getActiveLinkStyle}
+              onClick={handleNavigationClick}
               to="/"
             >
               Home
             </NavLink>
           </li>
           <li>
-              <NavLink onClick={handleClickHome}>Play Around &#8674;</NavLink>
+            <NavLink onClick={handleClickHome}>Play Around &#8674;</NavLink>
           </li>
-          <li onClick={handleNavigationClick}>
+          <li>
             <NavLink
               style={getActiveLinkStyle}
               onClick={handleNavigationClick}
@@ -51,7 +51,7 @@ function Navigation({ setShowNav }) {
             </NavLink>
           </li>
           <hr />
-          <li onClick={handleNavigationClick}>
+          <li>
             <div className={styles.back_to_top} onClick={handleBackToTop}>
               &#8593; Back to top &#8593;
             </div>
