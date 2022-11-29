@@ -20,7 +20,9 @@ function NewsSection() {
   const [showModal, setShowModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   const [modalData, setModalData] = useState(data[0]);
-
+  const urls = {
+    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
+  };
   let keysToRemove = [
     "_score",
     "author",
