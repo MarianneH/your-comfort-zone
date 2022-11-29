@@ -9,14 +9,14 @@ function TeamMembers({ name, content, github }) {
       <h2 className={styles.team_name}>{name}</h2>
       <p className={styles.team_content}>{content}</p>
       <div>
-        <a href={github} target="_blank" rel="noreferrer">
+        <a href={github} target="_blank">
           <img
             src={githubImage}
             alt="link to github profile"
             className={styles.icon}
           />
         </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/" target="_blank">
           <img
             src={linkedInLogo}
             alt="link to linkedin profile"
