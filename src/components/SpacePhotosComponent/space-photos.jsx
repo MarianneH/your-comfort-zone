@@ -17,9 +17,7 @@ export default function GetSpacePhotos() {
   useEffect(() => {
     fetchPhoto();
     async function fetchPhoto() {
-      const res = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APIKEY}`
-      );
+      const res = await fetch(`/.netlify/functions/fetch-space`);
       const data = await res.json();
       setPhotoData(data);
     }
