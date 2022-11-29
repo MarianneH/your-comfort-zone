@@ -3,7 +3,6 @@ import styles from "./space-photos.module.css";
 import sound from "./tranquility.mp3";
 import play from "../../assets/play.png";
 import stop from "../../assets/stop.png";
-import axios from "axios";
 
 function togglePlay(setIsPlaying, isPlaying, audio) {
   setIsPlaying(!isPlaying);
@@ -16,10 +15,14 @@ export default function GetSpacePhotos() {
   const [audio] = useState(new Audio(sound));
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8000/space`)
-      .then((response) => setPhotoData(response.data))
-      .catch((err) => console.log(err));
+    fetchPhoto();
+    async function fetchPhoto() {
+      const res = await fetch(
+        `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_APIKEY}`
+      );
+      const data = await res.json();
+      setPhotoData(data);
+    }
   }, []);
 
   if (!photoData) return <div />;
