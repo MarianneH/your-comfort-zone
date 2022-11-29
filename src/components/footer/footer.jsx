@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className={styles.footer_container}>
       <a href={"https://github.com/MarianneH/your-comfort-zone.git"}>
-        <img className={styles.git} src={git} alt="github" />
+        <img className={styles.git} src={git} />
       </a>
       <Link to="/about-us" className={styles.text}>
         About Us
