@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import axios from "axios";
 import styles from "./newsSection.module.css";
 import "../../root.css";
 import SearchBubbles from "../../components/searchBubbles/search-bubbles";
@@ -37,38 +36,25 @@ function NewsSection() {
     "is_opinion",
     "clean_url",
   ];
-
+  //fetching the data from an API
+  const { response } = useFetch(
+    urls.newscatcher,
+    process.env.REACT_APP_NEWS_CATCHER_KEY,
+    setLoading
+  );
+  //using the data
   useEffect(() => {
-    setLoading((prevData) => true);
-    axios
-      .get(`http://localhost:8000/news/${query}/${pageNumber}`)
-      .then((response) => {
-        setData((prevData) => {
-          return removeKeysOfObject(
-            [...prevData, ...response.data.articles],
-            keysToRemove
-          );
-        });
-        setLoading((prevData) => false);
-        setHasMore((prevData) => response.data.total_hits >= data.length + 20);
-      })
-      .catch((err) => console.log(err));
+    if (response !== null) {
+      setData((prevData) => {
+        return removeKeysOfObject(
+          [...prevData, ...response.articles],
+          keysToRemove
+        );
+      });
+      setHasMore((prevData) => response.total_hits >= data.length + 20);
+    }
     // eslint-disable-next-line
-  }, [query, pageNumber]);
-
-  // //using the data
-  // useEffect(() => {
-  //   if (response !== null) {
-  //     setData((prevData) => {
-  //       return removeKeysOfObject(
-  //         [...prevData, ...response.articles],
-  //         keysToRemove
-  //       );
-  //     });
-  //     setHasMore((prevData) => response.total_hits >= data.length + 20);
-  //   }
-  //   // eslint-disable-next-line
-  // }, [response]);
+  }, [response]);
 
   //to display the correct data in the modal
   useEffect(() => {
