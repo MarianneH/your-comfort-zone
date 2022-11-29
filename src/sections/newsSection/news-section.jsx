@@ -9,6 +9,7 @@ import LoadingIndicator from "../../components/loadingIndicator/loading-indicato
 import NewsModal from "../../components/newsModal/news-modal";
 import removeKeysOfObject from "../../hooks/remove-keys-of-object";
 import Fox from "../../components/fox/fox";
+import useFetch from "../../hooks/useFetch";
 
 function NewsSection() {
   const [data, setData] = useState([]);
