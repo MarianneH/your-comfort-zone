@@ -52,7 +52,9 @@ Link to the website through Netlify:
 # Acknowledgments
 ## Videos that helped building the page 
 Infinite Scrolling With React - Tutorial - by Web Dev Simplified - https://www.youtube.com/watch?v=NZKUirTtxcg 
+
 Create your first Netlify Serverless Function! - Tutorial - by Code with Ania Kubów - https://www.youtube.com/watch?v=n_KASTN0gUE
+
 How To Deploy React Apps To Netlify (with Functions) - Tutorial - by codebubb - https://www.youtube.com/watch?v=9iZCLODSq6k&t=523s
 
 ## Other Ressources
