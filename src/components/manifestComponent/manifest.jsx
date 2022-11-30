@@ -3,20 +3,21 @@ import LoadingIndicator from "../loadingIndicator/loading-indicator";
 import styles from "./manifest.module.css";
 
 function Manifest() {
-  const [userPrompt, setUserPrompt] = useState("carrots flying in space");
+  const [userPrompt, setUserPrompt] = useState(null);
   const [userInput, setUserInput] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    fetchPhoto();
+    if (userPrompt) {
+      setLoading(true);
+      fetchPhoto();
+    }
     async function fetchPhoto() {
       const res = await fetch(
         `/.netlify/functions/fetch-dalle?userprompt=${userPrompt}`
       );
       const data = await res.json();
-      console.log(data.data[0].url);
       setImageUrl(data.data[0].url);
       setLoading(false);
     }
