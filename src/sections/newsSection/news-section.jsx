@@ -9,7 +9,7 @@ import LoadingIndicator from "../../components/loadingIndicator/loading-indicato
 import NewsModal from "../../components/newsModal/news-modal";
 import removeKeysOfObject from "../../hooks/remove-keys-of-object";
 import Fox from "../../components/fox/fox";
-import useFetch from "../../hooks/useFetch";
+import axios from "axios";
 
 function NewsSection() {
   const [data, setData] = useState([]);
@@ -20,9 +20,6 @@ function NewsSection() {
   const [showModal, setShowModal] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   const [modalData, setModalData] = useState(data[0]);
-  const urls = {
-    newscatcher: `https://api.newscatcherapi.com/v2/search?q=${query}&lang=en&sources=theguardian.com&page_size=20&page=${pageNumber}`,
-  };
   let keysToRemove = [
     "_score",
     "author",
@@ -38,24 +35,25 @@ function NewsSection() {
     "clean_url",
   ];
   //fetching the data from an API
-  const { response } = useFetch(
-    urls.newscatcher,
-    process.env.REACT_APP_NEWS_CATCHER_KEY,
-    setLoading
-  );
-  //using the data
   useEffect(() => {
-    if (response !== null) {
-      setData((prevData) => {
-        return removeKeysOfObject(
-          [...prevData, ...response.articles],
-          keysToRemove
-        );
-      });
-      setHasMore((prevData) => response.total_hits >= data.length + 20);
-    }
+    setLoading((prevData) => true);
+    axios
+      .get(
+        `/.netlify/functions/fetch-news?query=${query}&pagenumber=${pageNumber}`
+      )
+      .then((response) => {
+        setData((prevData) => {
+          return removeKeysOfObject(
+            [...prevData, ...response.data.articles],
+            keysToRemove
+          );
+        });
+        setLoading((prevData) => false);
+        setHasMore((prevData) => response.data.total_hits >= data.length + 20);
+      })
+      .catch((err) => console.log(err));
     // eslint-disable-next-line
-  }, [response]);
+  }, [query, pageNumber]);
 
   //to display the correct data in the modal
   useEffect(() => {
