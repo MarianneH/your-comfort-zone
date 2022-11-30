@@ -5,7 +5,7 @@ import styles from "./manifest.module.css";
 function Manifest() {
   const [userPrompt, setUserPrompt] = useState("carrots flying in space");
   const [userInput, setUserInput] = useState(null);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function Manifest() {
       );
       const data = await res.json();
       console.log(data.data[0].url);
-      setImageUrl(data);
+      setImageUrl(data.data[0].url);
       setLoading(false);
     }
   }, [userPrompt]);
