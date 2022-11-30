@@ -43,6 +43,7 @@ Link to the website through Netlify:
 
 ## Packages used
 * axios: https://www.npmjs.com/package/axios
+* netlify-cli: https://www.npmjs.com/package/netlify-cli
 * openAI: https://openai.com/api/
 * React Router Dom: https://www.npmjs.com/package/react-router-dom/v/5.2.0
 * React Router Hash: https://www.npmjs.com/package/react-router-hash-link 
@@ -51,6 +52,8 @@ Link to the website through Netlify:
 # Acknowledgments
 ## Videos that helped building the page 
 Infinite Scrolling With React - Tutorial - by Web Dev Simplified - https://www.youtube.com/watch?v=NZKUirTtxcg 
+Create your first Netlify Serverless Function! - Tutorial - by Code with Ania Kubów - https://www.youtube.com/watch?v=n_KASTN0gUE
+How To Deploy React Apps To Netlify (with Functions) - Tutorial - by codebubb - https://www.youtube.com/watch?v=9iZCLODSq6k&t=523s
 
 ## Other Ressources
 * loading indecator from: http://ajaxloadingimages.net/svg
